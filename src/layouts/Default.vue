@@ -96,7 +96,7 @@ export default {
       navHeight: "",
       navItemOpacity: "",
       navPadding: "",
-      lastScrollPos: window.pageYOffset,
+      lastScrollPos: 0,
       currScrollPos: "",
       displayFloatingMenu: false,
       navIsMobile: false,
@@ -152,6 +152,7 @@ export default {
     }
   },
   mounted() {
+    this.lastScrollPos = window.pageYOffset || 0;
     window.addEventListener("scroll", this.navShrink, false);
     if (window.innerWidth <= 1024) {
       this.navIsMobile = true;
