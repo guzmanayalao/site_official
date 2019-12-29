@@ -19,6 +19,7 @@ module.exports = function(api) {
         banner: `
           background: linear-gradient(90deg, rgb(162, 0, 255) 6%, rgba(192, 0, 255, 1) 100%);
         `,
+        mtitle: "Web Design, Web Development | Case Study (ACL)",
         title: "Belniak Media - ACL Staticide",
         scope: "Web Design &bull; Web Development",
         vimeo: `<div style="padding:58.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/379511081?autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div`,
@@ -62,6 +63,7 @@ module.exports = function(api) {
       path: "/partners/Belniak-Media/",
       component: "./src/templates/project.vue",
       context: {
+        mtitle: "Web Design, Web Development | Case Study (Belniak Media)",
         title: "Belniak Media",
         banner: `
         background: linear-gradient(90deg, rgba(245,217,0,1) 0%, rgba(255,64,0,1) 100%);
@@ -121,9 +123,10 @@ module.exports = function(api) {
       path: "/partners/Benji/",
       component: "./src/templates/project.vue",
       context: {
+        mtitle: "Artist Branding, Website | Case Study (Benji)",
         title: "Benji/6enji",
         banner: `
-        background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(2,15,128,1) 100%);
+        background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
         `,
         scope:
           "Branding &bull; Web Design &bull; Web Development &bull; Marketing",

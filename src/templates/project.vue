@@ -39,8 +39,13 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 export default {
-  metaInfo: {
-    title: "About us"
+  data() {
+    return {};
+  },
+  metaInfo() {
+    return {
+      title: this.$context.mtitle
+    };
   }
 };
 </script>
@@ -121,7 +126,7 @@ button {
   .colRight,
   .colLeft {
     width: 100%;
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
   .colDetails {
     display: flex;

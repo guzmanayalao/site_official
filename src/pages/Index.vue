@@ -22,13 +22,13 @@
     <OurMission />
     <section id="contactUs">
       <div class="maxWidthContainer">
-        <h2 id="contact">CONTACT</h2>
+        <h2 id="contact">Let's Get In Touch</h2>
         <p>
-          For booking, features, and inquiries please fill out this form. This
-          is the best way to directly contact BENJI.<br /><span
-            :style="{ color: messageColor }"
-            >{{ successMessage }}</span
-          >
+          Let's figure out how we can help you create and/or manage your online
+          presence. (Our consultations are totally free.)
+          <br /><span :style="{ color: messageColor }">{{
+            successMessage
+          }}</span>
         </p>
         <form
           name="contact"
@@ -62,11 +62,11 @@
         </form>
       </div>
     </section>
-    <!-- <g-image id="benjiAbout" src="../benjiwarzonecover.jpg" width="450" :style="{transform: 'translateY(' + (translateVal/25) + 'px)'}"></g-image> -->
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
 </template>
+
 <page-query>
 query Homepage {
   homepage(id: "1") {
@@ -96,32 +96,39 @@ export default {
   methods: {
     handleScroll(event) {
       this.translateVal = window.scrollY;
+    },
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    },
+    handleSubmit(e) {
+      if (this.formData.name && this.formData.email && this.formData.message) {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            "form-name": e.target.getAttribute("name"),
+            ...this.formData
+          })
+        })
+          .then(() => {
+            this.messageColor = "green";
+            this.successMessage = "Thank you for contacting Site!";
+          })
+          .catch(error => {
+            this.messageColor = "#db4040";
+
+            this.successMessage = error;
+            this.formData = {};
+          });
+      } else {
+        this.successMessage = "Please fill out all of the form fields.";
+        this.messageColor = "#db4040";
+      }
     }
-
-    // encode(data) {
-    // return Object.keys(data)
-    //   .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    //   .join('&')
-    // },
-    // handleSubmit(e) {
-    //   if (this.formData.name && this.formData.email && this.formData.message){
-    //     fetch('/', {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //       body: this.encode({
-    //         'form-name': e.target.getAttribute('name'),
-    //         ...this.formData,
-    //       }),
-    //     })
-    //     .then(() => this.successMessage = 'Thank you for contacting Benji!')
-    //     .catch( (error) => { this.successMessage = error;
-    //             this.messageColor = "#db4040" } )
-    //   } else {
-    //     this.successMessage = 'Please fill out all of the form fields.';
-    //     this.messageColor = "#db4040";
-    //   }
-
-    // }
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);

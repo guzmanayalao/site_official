@@ -10,11 +10,13 @@ import {
   faBars,
   faCode,
   faPalette,
-  faSearchDollar
+  faSearchDollar,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
+
 library.add(
   faGithub,
   faTwitter,
@@ -22,14 +24,19 @@ library.add(
   faBars,
   faCode,
   faPalette,
-  faSearchDollar
+  faSearchDollar,
+  faTimes
 );
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
+
   Vue.component("font-awesome", FontAwesomeIcon);
 
   Vue.component("Layout", DefaultLayout);
-
+  head.script.push({
+    src: "https://account.snatchbot.me/script.js",
+    body: true
+  });
   head.link.push({
     rel: "stylesheet",
     href:
@@ -37,12 +44,12 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "title",
-    content: "SITE | Chicago Web Development"
+    content: "SITE | Chicago Web Development and Digital Marketing"
   });
   head.meta.push({
     name: "description",
     content:
-      "Benji is an imaginative 17 year old Hip Hop artist from Little Village, Chicago. He's inspired by Gherbo's realness, Kid Cudi's cosmic themes, and Lil Peep's defiance. "
+      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
   });
   head.meta.push({
     name: "og:type",
@@ -50,24 +57,24 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "og:url",
-    content: "https://officialbenji.com"
+    content: "https://sitefromchicago.com"
   });
   head.meta.push({
     name: "og:url",
-    content: "https://officialbenji.com"
+    content: "https://sitefromchicago.com"
   });
   head.meta.push({
     name: "og:title",
-    content: "BENJI'S OFFICIAL WEBSITE"
+    content: "SITE | Chicago Web Development and Digital Marketing"
   });
   head.meta.push({
     name: "og:description",
     content:
-      "Benji is an imaginative 17 year old Hip Hop artist from Little Village, Chicago. He's inspired by Gherbo's realness, Kid Cudi's cosmic themes, and Lil Peep's defiance. "
+      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses."
   });
   head.meta.push({
     name: "og:image",
-    content: "/assets/static/benjiwarzonecover.jpg"
+    content: "/assets/static/static/uploads/3d-Logo.png"
   });
   head.meta.push({
     name: "twitter:card",
@@ -75,20 +82,20 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "twitter:url",
-    content: "https://officialbenji.com"
+    content: "https://sitefromchicago.com"
   });
   head.meta.push({
     name: "twitter:title",
-    content: "BENJI'S OFFICIAL WEBSITE"
+    content: "SITE | Chicago Web Development and Digital Marketing"
   });
   head.meta.push({
     name: "twitter:description",
     content:
-      "Benji is an imaginative 17 year old Hip Hop artist from Little Village, Chicago. He's inspired by Gherbo's realness, Kid Cudi's cosmic themes, and Lil Peep's defiance. "
+      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
   });
   head.meta.push({
     name: "twitter:image",
-    content: "/assets/static/benjiwarzonecover.jpg"
+    content: "/assets/static/static/uploads/3d-Logo.png"
   });
   // head.bodyAttrs = { class: "body-class" };
 }

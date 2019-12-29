@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="notice" :class="{ noticeActive: noticeActive }">
+      <g-link>Psst.. Want A Free Consultation? Click Here. </g-link>
+      <font-awesome
+        :icon="['fas', 'times']"
+        @click="noticeActive = false"
+      ></font-awesome>
+    </div>
     <nav @scroll="navShrink" v-if="!navIsMobile">
       <div class="maxWidthContainer" :style="{ height: navHeight + 'px' }">
         <g-link to="/">
@@ -12,11 +19,11 @@
           </g-image>
         </g-link>
 
-        <a href="#ourResults" :style="{ opacity: navItemOpacity }">Results</a>
-        <a href="#ourServicesAnchor" :style="{ opacity: navItemOpacity }"
+        <a href="/#ourResults" :style="{ opacity: navItemOpacity }">Results</a>
+        <a href="/#ourServicesAnchor" :style="{ opacity: navItemOpacity }"
           >Services</a
         >
-        <a href="#ourMissionAnchor" :style="{ opacity: navItemOpacity }"
+        <a href="/#ourMission" :style="{ opacity: navItemOpacity }"
           >Testimonials</a
         >
         <!-- <div id="searchBarContainer" :style="{ opacity: navItemOpacity }">
@@ -71,18 +78,19 @@
       <div id="fullscreenMenu" v-if="hamburgerOpen">
         <nav>
           <a href="/" @click="hamburgerOpen = !hamburgerOpen">Home</a>
-          <a href="#ourResults" @click="hamburgerOpen = !hamburgerOpen"
+          <a href="/#ourResults" @click="hamburgerOpen = !hamburgerOpen"
             >Results</a
           >
-          <a href="#ourServicesAnchor" @click="hamburgerOpen = !hamburgerOpen"
+          <a href="/#ourServicesAnchor" @click="hamburgerOpen = !hamburgerOpen"
             >Services</a
           >
-          <a href="#ourMissionAnchor" @click="hamburgerOpen = !hamburgerOpen"
+          <a href="/#ourMission" @click="hamburgerOpen = !hamburgerOpen"
             >Testimonials</a
           >
         </nav>
       </div>
     </transition>
+
     <!-- a wrapper for slot is needed -->
     <slot />
     <!-- the content -->
@@ -101,12 +109,12 @@ export default {
       displayFloatingMenu: false,
       navIsMobile: false,
       hamburgerOpen: false,
-      fullscreenMenuIsOpen: false
+      fullscreenMenuIsOpen: false,
+      noticeActive: false
     };
   },
   methods: {
     navShrink(event) {
-      console.log("shrink");
       // this.currScrollPos = window.pageYOffset;
 
       // if(this.lastScrollPos < this.currScrollPos){
@@ -143,7 +151,6 @@ export default {
           this.navItemOpacity = 0;
         }
       } else {
-        console.log("2 or less");
         this.navItemOpacity = 1;
       }
     },
@@ -157,6 +164,8 @@ export default {
     if (window.innerWidth <= 1024) {
       this.navIsMobile = true;
     }
+    this.noticeActive = false;
+    window.sntchChat.Init(86171);
   },
   created() {}
 };
@@ -189,7 +198,44 @@ body p {
 h2 {
   margin-bottom: 25px;
 }
+.notice {
+  width: 30%;
+  background: #000d1a;
+  text-align: center;
+  transform: translateY(100px);
+  transition: all 0.5s;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 2px solid rgb(0, 28, 53);
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+.notice.noticeActive {
+  transform: translateY(0px);
+  transition: all 0.5s;
+  transition-delay: 4s;
+  padding: 1rem;
+}
+.notice a {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.notice svg {
+  font-size: 20px;
+}
 @media screen and (max-width: 1024px) {
+  .notice {
+    width: 90%;
+  }
   body {
     background: url("../../static/uploads/graphy-dark.png"),
       radial-gradient(circle, rgb(21, 32, 43) 60%, rgba(0, 0, 0, 1) 100%);
@@ -239,7 +285,7 @@ h2 {
   display: none;
 }
 /* #menuButton {
-  display: none; 
+  display: none;
 } */
 .projectAnimation-enter-active {
   transition: opacity 5s;

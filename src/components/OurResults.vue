@@ -37,8 +37,9 @@
             </p>
 
             <p>
-              As one of our main partners, Belniak Media has trusted us to
-              deliver their front development and graphic design ...
+              Benji is an Artist out of Chicago, IL. He needed help branding
+              himself as an artist; so we helped him out. First, we explored
+              Benji's intrests...
             </p>
             <g-link class="readMoreLink" to="/partners/Benji/"
               >Read More</g-link
@@ -49,6 +50,7 @@
             <div class="projectImageWrapper">
               <g-image src="../../static/uploads/belniakProject.png"></g-image>
             </div>
+            <p class="tags">Web Design &bull; Web Development</p>
             <p>
               (Contracted by Belniak Media) ACL needed a major website remake.
               Our sister company, Belniak Media, trusted us ...
@@ -60,21 +62,24 @@
             <div class="projectImageWrapper">
               <g-image src="../../static/uploads/erw.png"></g-image>
             </div>
+            <p class="tags">Web App Design &bull; Web App Development</p>
             <p>
-              As one of our main partners, Belniak Media has trusted us to
-              deliver their front development and graphic design ...
+              (Contracted By Belniak Media) Belniak Media has trusted us to
+              design and develop ERW's new app...
             </p>
             <g-link class="readMoreLink" disabled>Coming Soon</g-link>
           </article>
 
           <article>
             <h3>Musella Brain Tumor Foundation</h3>
+
             <div class="projectImageWrapper">
               <g-image src="../../static/uploads/musella.png"></g-image>
             </div>
+            <p class="tags">Web Development</p>
             <p>
-              As one of our main partners, Belniak Media has trusted us to
-              deliver their front development and graphic design ...
+              Musella needed their design brought to life. By using modern
+              development...
             </p>
             <g-link class="readMoreLink" disabled>Coming Soon</g-link>
           </article>
@@ -85,6 +90,7 @@
                 src="../../static/uploads/greatLakesLining.png"
               ></g-image>
             </div>
+            <p class="tags">Logo Design &bull; Web Development</p>
             <p>
               As one of our main partners, Belniak Media has trusted us to
               deliver their front development and graphic design ...

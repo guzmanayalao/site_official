@@ -10,10 +10,10 @@
             </div>
             <div class="cardContent">
               <p>
-                We've trusted Site as one of our design and development
+                &ldquo;We've trusted Site as one of our design and development
                 contractors for over half a year now. Site brings fresh
                 solutions to old problems, and they've been able to handle any
-                problem we've thrown their way.
+                problem we've thrown their way.&rdquo;
               </p>
               <div class="cardSig">
                 <p>Gary Belniak</p>
@@ -45,10 +45,10 @@
             </div>
             <div class="cardContent">
               <p>
-                Site has helped us with various design projects over the years.
-                We turn to them whenever we need any design related work,
+                &ldquo;Site has helped us with various design projects over the
+                years. We turn to them whenever we need any design related work,
                 because we know they can deliver premium work at a competitive
-                rate.
+                rate.&rdquo;
               </p>
               <div class="cardSig">
                 <p>Christopher Morales</p>

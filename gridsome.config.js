@@ -17,7 +17,7 @@ module.exports = {
     }
   },
   icon: {
-    favicon: "./src/benjiwarzonecover.jpg"
+    favicon: "./src/favicon.png"
   },
   plugins: [
     {
