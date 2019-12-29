@@ -95,7 +95,7 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "twitter:image",
-    content: "/assets/static/static/uploads/3d-Logo.png"
+    content: "/assets/static/3d-Logo.png"
   });
   // head.bodyAttrs = { class: "body-class" };
 }
