@@ -74,7 +74,7 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "og:image",
-    content: "/assets/static/static/uploads/3d-Logo.png"
+    content: "/assets/static/3d-Logo.4736ab6.8932aab.png"
   });
   head.meta.push({
     name: "twitter:card",
@@ -95,7 +95,7 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "twitter:image",
-    content: "/assets/static/3d-Logo.png"
+    content: "/assets/static/3d-Logo.4736ab6.8932aab.png"
   });
   // head.bodyAttrs = { class: "body-class" };
 }
