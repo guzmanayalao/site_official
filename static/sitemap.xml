@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>https://www.sitefromchicago.com/</loc>
+
+      <lastmod>2019-01-04</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>1.0</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.sitefromchicago.com/#ourResults</loc>
+
+      <lastmod>2004-12-23</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.sitefromchicago.com/#ourServicesAnchor</loc>
+      <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+
+   <url>
+
+      <loc>https://www.sitefromchicago.com/#ourMission</loc>
+
+     <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.sitefromchicago.com/#contact</loc>
+
+      <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>
+   <url>
+
+      <loc>https://www.sitefromchicago.com/partners/Belniak-Media/</loc>
+
+      <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>
+    <url>
+
+      <loc>https://www.sitefromchicago.com/partners/Benji/</loc>
+
+      <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>
+         <url>
+
+      <loc>https://www.sitefromchicago.com/partners/ACL/</loc>
+
+      <lastmod>2019-01-04</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>
+</urlset>
