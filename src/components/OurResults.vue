@@ -14,13 +14,64 @@
 
         <div id="ourResultsSlider">
           <article>
+            <h3>Dedicated Runners</h3>
+            <div class="projectImageWrapper">
+              <g-image src="../../static/uploads/dedicatedrunners.png"></g-image>
+            </div>
+            <p class="tags">Web Design &bull; Web Development &bull; Branding</p>
+            <p>
+             Dedicated Runners are a logistics company from the Southwest side of Chicago..
+            </p>
+            <g-link class="readMoreLink" to="/partners/Dedicated-Runners/"
+              >Read More</g-link
+            >
+          </article>
+          <article>
+            <h3>AAII</h3>
+            <div class="projectImageWrapper">
+              <g-image src="../../static/uploads/aaii.png"></g-image>
+            </div>
+            <p class="tags">Web Design &bull; Web Development</p>
+            <p>
+             As a principal member of AAII's tech team, we were tasked with developing the front end of their website redesign..
+            </p>
+            <g-link class="readMoreLink" to="/partners/American-Association-of-Individual-Investors/"
+              >Read More</g-link
+            >
+          </article>
+          <article>
+            <h3>Stock Superstars Report</h3>
+            <div class="projectImageWrapper">
+              <g-image src="../../static/uploads/ssr.png"></g-image>
+            </div>
+            <p class="tags">Web Design &bull; Web Development</p>
+            <p>
+             SSR is an AAII product. We were tasked with redesigning and rebuilding a website that was over a decade old..
+            </p>
+            <g-link class="readMoreLink" to="/partners/Stock-Superstars-Report/"
+              >Read More</g-link
+            >
+          </article>
+          <article>
+            <h3>ACL, Inc. (B.M)</h3>
+            <div class="projectImageWrapper">
+              <g-image src="../../static/uploads/belniakProject.png"></g-image>
+            </div>
+            <p class="tags">Web Design &bull; Web Development</p>
+            <p>
+              (Contracted by Belniak Media) ACL needed a major website remake.
+              Our sister company, Belniak Media, trusted us ...
+            </p>
+            <g-link class="readMoreLink" to="/partners/ACL/">Read More</g-link>
+          </article>
+          <article>
             <h3>Belniak Media</h3>
             <div class="projectImageWrapper">
               <g-image src="../../static/uploads/belniak.png"></g-image>
             </div>
             <p class="tags">Web Design &bull; Web Development</p>
             <p>
-              As one of our main partners, Belniak Media has trusted us to
+              Belniak Media has trusted us to
               deliver their front development and graphic design ...
             </p>
             <g-link class="readMoreLink" to="/partners/Belniak-Media/"
@@ -45,18 +96,7 @@
               >Read More</g-link
             >
           </article>
-          <article>
-            <h3>ACL, Inc. (B.M)</h3>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/belniakProject.png"></g-image>
-            </div>
-            <p class="tags">Web Design &bull; Web Development</p>
-            <p>
-              (Contracted by Belniak Media) ACL needed a major website remake.
-              Our sister company, Belniak Media, trusted us ...
-            </p>
-            <g-link class="readMoreLink" to="/partners/ACL/">Read More</g-link>
-          </article>
+          
           <article>
             <h3>Enhanced Report Writer (B.M)</h3>
             <div class="projectImageWrapper">

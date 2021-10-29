@@ -139,5 +139,65 @@ module.exports = function(api) {
         `
       }
     });
+    createPage({
+      path: "/partners/American-Association-of-Individual-Investors/",
+      component: "./src/templates/project.vue",
+      context: {
+        mtitle: "Company Web Development, Website Design | Case Study (AAII)",
+        title: "AAII/American Association of Individual Investors",
+        banner: `
+        background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
+        `,
+        imagePath: '/assets/static/static/uploads/aaii.png',
+        scope:
+          "Web Design &bull; Web Development",
+        tldr:
+          "As a principal member of AAII's tech team, we were tasked with developing the front end of their website redesign.",
+        goal: "Redesign and rebuild AAII's website.",
+        how: `
+        The American Association of Individual Investors (AAII) needed a fresh look for their website. We had to make sure that the design encompassed and communicated their services as an educational resource for investors. We were able to highlight their stock/ticker information, robust journal and article posts, featured writers, featured community, and featured videos. The site is fully responsive and works on any device.
+        `
+      }
+    });
+    createPage({
+      path: "/partners/Stock-Superstars-Report/",
+      component: "./src/templates/project.vue",
+      context: {
+        mtitle: "Company Web Development, Website Design | Case Study (SSR)",
+        title: "SSR - Stock Superstars Report",
+        banner: `
+        background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
+        `,
+        imagePath: '/assets/static/static/uploads/ssr.png',
+        scope:
+          "Web Design &bull; Web Development",
+        tldr:
+          "SSR is an AAII product. We were tasked with redesigning and rebuilding a website that was over a decade old.",
+        goal: "Redesign and rebuild the Stock Superstars Reports's website.",
+        how: `
+        SSR is an educational, portfolio-building publication that makes low risk and high returns a priority. The American Association of Individual Investors (AAII) offers SSR as a product/tool for their members. They needed a fresh look for a decade old website and we delivered a modern, colorful, and concise website design. We used lean frontend technology to optimize SEO and increase page speed. 
+        `
+      }
+    });
+    createPage({
+      path: "/partners/Dedicated-Runners/",
+      component: "./src/templates/project.vue",
+      context: {
+        mtitle: "Company Web Development, Website Design | Case Study (Dedicated Runners)",
+        title: "Dedicated Runners",
+        banner: `
+        background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
+        `,
+        imagePath: '/assets/static/static/uploads/dedicatedrunners.png',
+        scope:
+          'Web Design &bull; Web Development &bull; Branding &bull; Click <a href="http://dedicatedrunners.net">here</a>  to view full site.',
+        tldr:
+          "Dedicated Runners are a logistics company from the Southwest side of Chicago.",
+        goal: "Design and build a logistics company's website from scratch in 2 days.",
+        how: `
+         Dedicated Runners are a logistics company from Chicago, IL. We were tasked with designing and developing a full website in 2 days. We went to work and began researching logistics companies and began to learn how they exist online. We took notice of different website features, but mainly their offering of a broad range of services and a job application section. We also implemented a beautiful set of professional stock photos which we offer to our clients at no cost. 
+        `
+      }
+    });
   });
 };

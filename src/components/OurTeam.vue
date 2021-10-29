@@ -3,8 +3,8 @@
       <div class="maxWidthContainer">
         <div id="ourTeamContent">
           <h2>Our Team</h2>
-          <p>Our team is located in "The Mexico of the Midwest". Little Village, Chicago and the Latinx community at large produces a great amount of business for our communities. Our mission is to make sure local businesses like those in Little Village are able to compete in the forever evolving world of the web. </p>
-          <a href="#" title="Read more about our mission.">Read More</a>
+          <p>Our team is located in "The Mexico of the Midwest". Little Village, Chicago and the Latino community at large produces a great amount of business for our communities. Our mission is to make sure local businesses like those in Little Village are able to compete in the forever evolving world of the web. </p>
+          
         </div>
       </div>
       
@@ -12,21 +12,14 @@
 </template>
 <style scoped>
 #ourTeam .maxWidthContainer:first-of-type {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center;
   padding: 0px 75px 0 75px;
-
 }
- #ourTeam .maxWidthContainer #ourTeamDescriptions{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0px 75px 0 75px;
-  
 
-}
 #ourTeamContent  {
     font-family: "Rubik";
+    margin: 10rem auto;
+    text-align: center;
+
 }
 #ourTeamContent h2 {
         font-size: 40px; 

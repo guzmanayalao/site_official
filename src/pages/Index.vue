@@ -20,6 +20,8 @@
       :style="{ transform: 'translateY(' + -translateVal / 6 + 'px)' }"
     ></g-image>
     <OurMission />
+    <OurTeam />
+
     <section id="contactUs">
       <div class="maxWidthContainer">
         <h2 id="contact">Let's Get In Touch</h2>
@@ -308,10 +310,10 @@ button.m1 {
 #contactUs .maxWidthContainer textarea {
   background: none;
   border: none;
-  border-bottom: 1px solid white;
+  border: 1px solid white;
   color: white;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   resize: none;
   transition: all 0.3s;
   outline: none;

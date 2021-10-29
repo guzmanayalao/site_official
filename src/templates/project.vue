@@ -4,8 +4,12 @@
       <h1 class="maxWidthContainer">{{ $context.title }}</h1>
     </div>
     <div class="frameWrapper">
-      <div id="frameContainer">
+      <div id="frameContainer" v-if="$context.vimeo">
         <div v-html="$context.vimeo"></div>
+      </div>
+      <div id="frameContainer" class="alt" v-else> 
+        <g-image id="imgPrev" :src="$context.imagePath"></g-image>
+
       </div>
     </div>
 
@@ -49,7 +53,12 @@ export default {
   }
 };
 </script>
-<style>
+<style >
+#imgPrev {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
 .maxWidthContainer {
   max-width: 1400px;
   margin: auto;
@@ -151,6 +160,12 @@ button {
 #frameContainer {
   max-width: 1000px;
   margin: auto;
+
+}
+#frameContainer.alt {
+    height: 500px;
+    overflow-y: auto;
+
 }
 
 @media screen and (max-width: 960px) {
