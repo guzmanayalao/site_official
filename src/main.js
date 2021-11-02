@@ -44,12 +44,12 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "title",
-    content: "SITE | Chicago Web Development and Digital Marketing"
+    content: "SITE | Chicago Web Development, Web Design, and Digital Marketing"
   });
   head.meta.push({
     name: "description",
     content:
-      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
+      "SITE is a web design, web development, and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
   });
   head.meta.push({
     name: "og:type",
@@ -65,12 +65,12 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "og:title",
-    content: "SITE | Chicago Web Development and Digital Marketing"
+    content: "SITE | Chicago Web Development, Web Design, and Digital Marketing"
   });
   head.meta.push({
     name: "og:description",
     content:
-      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses."
+      "SITE is a web development, Web Design, and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses."
   });
   head.meta.push({
     name: "og:image",
@@ -86,12 +86,12 @@ export default function(Vue, { router, head, isClient }) {
   });
   head.meta.push({
     name: "twitter:title",
-    content: "SITE | Chicago Web Development and Digital Marketing"
+    content: "SITE | Chicago Web Development, Web Design, and Digital Marketing"
   });
   head.meta.push({
     name: "twitter:description",
     content:
-      "SITE is a web development and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
+      "SITE is a web development, web design, and digital marketing consultancy based in Chicago, IL. We offer web design, web development, branding, and digital marketing solutions for new and old businesses.  "
   });
   head.meta.push({
     name: "twitter:image",

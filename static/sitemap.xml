@@ -6,9 +6,9 @@
 
       <loc>https://www.sitefromchicago.com/</loc>
 
-      <lastmod>2019-01-04</lastmod>
+      <lastmod>2021-11-01</lastmod>
 
-      <changefreq>monthly</changefreq>
+      <changefreq>yearly</changefreq>
 
       <priority>1.0</priority>
 
@@ -16,58 +16,44 @@
 
    <url>
 
-      <loc>https://www.sitefromchicago.com/#ourResults</loc>
+      <loc>https://www.sitefromchicago.com/partners/belniak-media/</loc>
 
-      <lastmod>2004-12-23</lastmod>
-
-      <changefreq>weekly</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>https://www.sitefromchicago.com/#ourServicesAnchor</loc>
-      <lastmod>2019-01-04</lastmod>
-      <changefreq>monthly</changefreq>
-
-   </url>
-
-
-   <url>
-
-      <loc>https://www.sitefromchicago.com/#ourMission</loc>
-
-     <lastmod>2019-01-04</lastmod>
-      <changefreq>monthly</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>https://www.sitefromchicago.com/#contact</loc>
-
-      <lastmod>2019-01-04</lastmod>
-      <changefreq>monthly</changefreq>
-   </url>
-   <url>
-
-      <loc>https://www.sitefromchicago.com/partners/Belniak-Media/</loc>
-
-      <lastmod>2019-01-04</lastmod>
+      <lastmod>2021-11-01</lastmod>
       <changefreq>monthly</changefreq>
    </url>
     <url>
 
-      <loc>https://www.sitefromchicago.com/partners/Benji/</loc>
+      <loc>https://www.sitefromchicago.com/partners/benji/</loc>
 
       <lastmod>2019-01-04</lastmod>
-      <changefreq>monthly</changefreq>
+      <changefreq>yearly</changefreq>
    </url>
-         <url>
+   <url>
 
-      <loc>https://www.sitefromchicago.com/partners/ACL/</loc>
+      <loc>https://www.sitefromchicago.com/partners/acl/</loc>
 
       <lastmod>2019-01-04</lastmod>
-      <changefreq>monthly</changefreq>
+      <changefreq>yearly</changefreq>
+   </url>
+   <url>
+
+      <loc>https://www.sitefromchicago.com/partners/dedicated-runners/</loc>
+
+      <lastmod>2021-11-01</lastmod>
+      <changefreq>yearly</changefreq>
+   </url>
+   <url>
+
+      <loc>https://www.sitefromchicago.com/partners/american-association-of-individual-investors/</loc>
+
+      <lastmod>2021-11-01</lastmod>
+      <changefreq>yearly</changefreq>
+   </url>
+   <url>
+
+      <loc>https://www.sitefromchicago.com/partners/stock-superstars-report/</loc>
+
+      <lastmod>2021-11-01</lastmod>
+      <changefreq>yearly</changefreq>
    </url>
 </urlset>
