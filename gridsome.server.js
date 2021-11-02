@@ -148,7 +148,7 @@ module.exports = function(api) {
         banner: `
         background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
         `,
-        imagePath: '/assets/static/static/uploads/aaii.png',
+        imagePath: '/uploads/aaii.png',
         scope:
           "Web Design &bull; Web Development",
         tldr:
@@ -168,7 +168,7 @@ module.exports = function(api) {
         banner: `
         background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
         `,
-        imagePath: '/assets/static/static/uploads/ssr.png',
+        imagePath: '/uploads/ssr.png',
         scope:
           "Web Design &bull; Web Development",
         tldr:
@@ -188,7 +188,7 @@ module.exports = function(api) {
         banner: `
         background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
         `,
-        imagePath: '/assets/static/static/uploads/dedicatedrunners.png',
+        imagePath: '/uploads/dedicatedrunners.png',
         scope:
           'Web Design &bull; Web Development &bull; Branding &bull; Click <a href="http://dedicatedrunners.net">here</a>  to view full site.',
         tldr:
