@@ -1,7 +1,9 @@
 ---
 title: Wrath of the dragon god
-date: 2018-11-10 20:08:08 -0700
 slug: wrath-of-the-dragon-god
+excerpt: adklfjadf
+date: 2018-11-10 20:08:08 -0700
+body2: adf
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.liquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
