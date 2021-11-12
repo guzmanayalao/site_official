@@ -2,6 +2,7 @@
 title: Dedicated Runners
 meta_title: Dedicated Runners | Case Study
 slug: dedicated-runners
+categories: Web Design • Web Development • Branding
 scope: Web Design • Web Development • Branding •
   Click [here](http://dedicatedrunners.net/) to view full site.
 image: /uploads/dedicatedrunners.png
