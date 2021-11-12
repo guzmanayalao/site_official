@@ -21,11 +21,19 @@ how: >-
 
   ✔️ They know their audience. ACL has a great understanding of who is on their website, and why they're there.
 
+
+
   ✔️ Belniak Media has optimized ACL's Search Engine Results (SEO) significantly. They run appropriate and highly research driven advertisements.
+
+
 
   ❌ Poor content strategy. Their content was well written, but it didn't tell a story that drove interest and engagement.
 
+
+
   ❌ User Experience (UX). The ACL's Website needed fluidity. We implemented smooth animations, new high quality images, interactions, and optimal performance speed.
+
+
 
   ❌ Design Trends. The design was good when it was made 10 years ago. Web design today requires wide, responsive, fluid, and concise layouts.
 ---
