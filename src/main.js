@@ -14,6 +14,22 @@ import {
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
+
+import VueScrollReveal from 'gridsome-scroll-reveal';
+ 
+// Using ScrollReveal's default configuration
+ 
+// // OR specifying custom default options for all uses of the directive
+// Vue.use(VueScrollReveal, {
+//   class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+//   duration: 800,
+//   scale: 1,
+//   distance: '10px',
+//   mobile: false
+// });
+
+
+
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
@@ -29,6 +45,7 @@ library.add(
 );
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
+  Vue.use(VueScrollReveal);
 
   Vue.component("font-awesome", FontAwesomeIcon);
 

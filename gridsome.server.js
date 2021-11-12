@@ -5,10 +5,54 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+
 module.exports = function(api) {
+
+  var fs = require('fs');
+  var files = fs.readdirSync('./dist/assets/static/');
+
+  
+  function getImagePath(startsWith) {
+
+    for ( let i = 0 ; i <= files.length; i++ ) {
+      if ( files[i].split(".")[0] == startsWith ) {
+        console.log(files[i].split(".")[0], startsWith );
+        return `/dist/asset/src/${files[i]}`
+      } 
+    }
+        
+  }
+
+
+  // console.log(files)
+
   api.loadSource(({ addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   });
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`  
+    { 
+      allPosts {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      } 
+    }
+    `)
+
+    data.allPosts.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts/${node.slug}`,
+        component: './src/pages/Posts.vue',
+        context: {
+          title: node.title
+        }
+      })
+    })
+  })
 
   api.createPages(({ createPage }) => {
     //gridsome.server.js
@@ -183,12 +227,13 @@ module.exports = function(api) {
       path: "/partners/Dedicated-Runners/",
       component: "./src/templates/project.vue",
       context: {
-        mtitle: "Company Web Development, Website Design | Case Study (Dedicated Runners)",
+        mtitle: "Chicago Website Design | Case Study (Dedicated Runners)",
         title: "Dedicated Runners",
         banner: `
         background: linear-gradient(90deg, rgba(0,95,245,1) 0%, rgba(80,95,245,1) 100%);
         `,
-        imagePath: '/uploads/dedicatedrunners.png',
+        imagePath: getImagePath('dedicatedrunners'),
+
         scope:
           'Web Design &bull; Web Development &bull; Branding &bull; Click <a href="http://dedicatedrunners.net">here</a>  to view full site.',
         tldr:

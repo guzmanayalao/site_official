@@ -1,66 +1,62 @@
 <template>
-  <section id="ourServices">
+  <section id="ideas">
     
     <div class="maxWidthWrapper">
-      <div id="ourServicesDescriptions">
-        <g-image id="shapesBlue" src="../../static/uploads/figma/shapesBlue.svg"></g-image>
+      <h2 class="large">Ideas + Posts</h2>
+      <div id="ideasDescriptions">
         <div class="descriptionItem" id="description_webDevelopment">
-          <h3> {{ $static.homepage.service1_headline }} </h3>
+          <h3>Web Development</h3>
           <p>
-            {{ $static.homepage.service1_content }} 
+            We understand compatibility and SEO. Yes, we use the latest and
+            greatest in tech, but we never put that ahead of your potential
+            customers. We offer compatible, modern, and fast solutions.
           </p>
           <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_webDesign">
           <h3>
-            {{ $static.homepage.service2_headline }} 
+            Web Design &amp; Branding
           </h3>
           <p>
-            {{ $static.homepage.service2_content }} 
+            Your business needs quality design and branding that communicates
+            your message appropriately. Whether you need a logo or an E-Commerce
+            website design, we can help you.
           </p>
           <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_marketing">
           <h3>
-            {{ $static.homepage.service3_headline }} 
+            Digital Marketing
           </h3>
           <p>
-           {{ $static.homepage.service3_content }} 
+            A website isn't any good if people can't find it. We offer E-mail,
+            Google Ads (Search and Display), Facebook, Instagram, Twitter, and
+            SnapChat marketing with advanced analytics.
           </p>
           <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_marketing">
           <h3>
-            {{ $static.homepage.service4_headline }} 
+            Digital Marketing
           </h3>
           <p class="large" style="max-width: unset">
-            {{ $static.homepage.service4_content }} 
+            Committing to a new website, logo, or marketing campaign can be frightening and expensive. We promise to make your experience with Site as affordable and as comforting as possible. By keeping a small but highly experienced team, we are able to produce premium quality work thats affordable to our clients and partners.
           </p>
           <button>See How</button>
         </div>
       </div>
+      <g-link style="display: flex; justify-content: center; margin-top: 4rem;"><button>See All Posts</button></g-link>
+      
     </div>
+
+
   </section>
 </template>
-<static-query>
-query {
-  homepage(id: "1") {
-    service1_headline
-    service2_headline
-    service3_headline
-    service4_headline
-    service1_content
-    service2_content
-    service3_content
-    service4_content
-  } 
-}
-</static-query>
 <script>
 export default {
   data() {
     return {
-      ourServicesMobile: false
+      ideasMobile: false
     };
   },
   methods: {},
@@ -70,34 +66,32 @@ export default {
 };
 </script>
 
-<style>
-#shapesBlue {
-  position: absolute;
-  top: -150px;
-  left: 100px;
-}
-#ourServices {
+<style scoped>
+#ideas {
   margin: 135px 0;
-  position: relative;
 }
-#ourServicesDescriptions {
+#ideasDescriptions {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .descriptionItem {
   position: relative;
   background: #fff;
   border: 4px solid #000;
   padding: 1rem 2rem;
-  margin-right: 4rem;
-  flex-grow: 1;
-  flex-basis: calc( 100px / 3 ); 
+  flex-basis: 50%; 
+  flex-shrink: 1;
+  margin-top: 4rem;
 
 }
 .descriptionItem:last-of-type {
-  flex-grow: 3;
-  flex-basis: 100%; 
   margin-top: 4rem; 
+  flex-basis: 20%; 
+  flex-shrink: 1;
+
   
 }
 .descriptionItem button {

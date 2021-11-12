@@ -1,8 +1,8 @@
 <template>
   <section id="ourMission">
-    <div class="maxWidthContainer">
+    <div class="maxWidthWrapper">
       <div id="ourMissionContent">
-        <h2>Testimonials</h2>
+        <h2 class="large underline underline--yellow">Testimonials</h2>
         <div class="testimonialCards">
           
           <div class="card">
@@ -10,6 +10,7 @@
               <g-image src="../../static/uploads/gary.jpg"></g-image>
             </div>
             <div class="cardContent">
+              <h3>Belniak Media</h3>
               <p>
                 &ldquo;We've trusted Site as one of our design and development
                 contractors for over half a year now. Site brings fresh
@@ -27,6 +28,7 @@
               <g-image src="../../static/uploads/jimmy.jpg"></g-image>
             </div>
             <div class="cardContent">
+              <h3>Great Lakes Lining</h3>
               <p>
                 &ldquo;Site made sure we were able to get up and running with
                 logo work, web design, web development, and even some video
@@ -45,6 +47,7 @@
               <g-image src="../../static/uploads/christ.jpg"></g-image>
             </div>
             <div class="cardContent">
+              <h3>50Fifth Realty Group, LLC</h3>
               <p>
                 &ldquo;Site has helped us with various design projects over the
                 years. We turn to them whenever we need any design related work,
@@ -64,35 +67,28 @@
 </template>
 <style scoped>
 #ourMissionContent {
-  font-family: "Rubik";
-}
-#ourMissionContent h2 {
-  font-size: 40px;
-  text-align: center;
+  font-family: "Inter", sans-serif;
 }
 
+
 #ourMission {
-  margin: 6rem auto;
+  margin: 8rem auto;
 }
 .testimonialCards {
-  margin-top: 90px;
+  margin-top: 120px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 0px 75px 0 75px;
   justify-items: center;
   grid-column-gap: 20px;
 }
 .card {
-  background: #000d1a;
-  color: #fff;
+  background: #fff;
+  color: #000;
   max-width: 350px;
   font-size: 17px;
   padding: 2rem;
-  border-radius: 1rem;
   position: relative;
   padding-top: 80px;
-  border: 1px solid rgb(0, 28, 53);
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.52);
 }
 .cardContent {
   display: flex;
@@ -113,14 +109,12 @@
 .avatar {
   width: 120px;
   height: 120px;
-  border-radius: 100%;
   overflow: hidden;
   position: absolute;
   top: -60px;
   left: 0;
   right: 0;
   margin: auto;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.52);
 }
 .avatar img {
   width: auto;
@@ -148,7 +142,6 @@
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 50px;
     grid-row-gap: 100px;
-    padding: 0px 30px;
   }
 }
 @media screen and (max-width: 800px) {

@@ -1,30 +1,18 @@
 <template>
-  <Layout @scroll="handleScroll">
-    <Landing />
-    <g-image
-      id="landingCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 2 + 'px)' }"
-    ></g-image>
-    <OurResults />
-    <g-image
-      id="resultsCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 4 + 'px)' }"
-    ></g-image>
-    <div id="ourServicesAnchor" style="height: 1px"></div>
-    <OurServices />
-    <g-image
-      id="servicesCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 6 + 'px)' }"
-    ></g-image>
-    <OurMission />
-    <OurTeam />
-
-    <section id="contactUs">
-      <div class="maxWidthContainer">
-        <h2 id="contact">Let's Get In Touch</h2>
+  <Layout>
+    
+    <Landing v-scroll-reveal="{ distance: '200px' }"></Landing>
+    <Introduction v-scroll-reveal="{ distance: '200px' }"></Introduction>
+    <PartnersBanner v-scroll-reveal="{ distance: '200px' }"></PartnersBanner>
+    <OurServices v-scroll-reveal="{ distance: '200px' }"></OurServices>
+    <OurResults v-scroll-reveal="{ distance: '200px' }"></OurResults>
+    <OurTeam v-scroll-reveal="{ distance: '200px' }"></OurTeam>
+    <OurMission v-scroll-reveal="{ distance: '200px' }"></OurMission>
+    <ConsultationsBanner v-scroll-reveal="{ distance: '200px' }"></ConsultationsBanner>
+    <Ideas v-scroll-reveal="{ distance: '200px' }"></Ideas>
+    <section id="contactUs" >
+      <div class="maxWidthWrapper" v-scroll-reveal="{ distance: '200px', interval: 30 }">
+        <h2 class="large" id="contact">Let's Get In Touch</h2>
         <p>
           Let's figure out how we can help you create and/or manage your online
           presence. (Our consultations are totally free.)
@@ -56,49 +44,45 @@
           </div>
 
           <div class="message-wrapper">
-            <label for="message">Message</label>
+            <label for="message">Message
             <textarea name="message" v-model="formData.message"></textarea>
+            </label>
           </div>
 
           <button type="submit">Submit form</button>
         </form>
       </div>
-    </section>
+    </section> 
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
 </template>
 
-<page-query>
-query Homepage {
-  homepage(id: "1") {
-    bio
-  }
-}
-</page-query>
+
+
 <script>
 import Landing from "../components/Landing";
 import OurResults from "../components/OurResults";
 import OurServices from "../components/OurServices";
 import OurMission from "../components/OurMission";
+import PartnersBanner from "../components/PartnersBanner";
+import ConsultationsBanner from "../components/ConsultationsBanner";
 import OurTeam from "../components/OurTeam";
+import Introduction from '../components/Introduction.vue';
+import Ideas from '../components/Ideas.vue';
+import VueScrollReveal from 'gridsome-scroll-reveal';
+
 export default {
   data() {
     return {
-      translateVal: 0,
-      successMessage: null,
-      messageColor: "#40db80",
       formData: {},
-      ourResultsMobile: false
     };
   },
   metaInfo: {
     title: "Site | Chicago Web Development"
   },
   methods: {
-    handleScroll(event) {
-      this.translateVal = window.scrollY;
-    },
+
     encode(data) {
       return Object.keys(data)
         .map(
@@ -133,202 +117,45 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
   },
   components: {
     Landing,
+    PartnersBanner,
     OurResults,
+    Introduction,
     OurServices,
     OurMission,
-    OurTeam
+    ConsultationsBanner,
+    OurTeam,
+    Ideas
   }
-};
+}
 </script>
 
 <style>
-/* rubik-regular - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../static/fonts/rubik-v9-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("Rubik"), local("Rubik-Regular"),
-    url("../../static/fonts/rubik-v9-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-regular.svg#Rubik") format("svg"); /* Legacy iOS */
+.maxWidthWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
 }
-/* rubik-500 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../../static/fonts/rubik-v9-latin-500.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Medium"), local("Rubik-Medium"),
-    url("../../static/fonts/rubik-v9-latin-500.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-500.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-500.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-500.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-500.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-/* rubik-700 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../../static/fonts/rubik-v9-latin-700.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Bold"), local("Rubik-Bold"),
-    url("../../static/fonts/rubik-v9-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-700.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-700.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-700.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-/* rubik-900 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../../static/fonts/rubik-v9-latin-900.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Black"), local("Rubik-Black"),
-    url("../../static/fonts/rubik-v9-latin-900.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-900.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-900.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-900.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-900.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-.maxWidthContainer {
-  max-width: 1400px;
-  margin: auto;
-}
-#landingCircle {
-  left: 120px;
-  position: absolute;
-  z-index: -20;
-  height: 50px;
-  width: auto;
-}
-
-#resultsCircle {
-  bottom: -400px;
-  left: 100px;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  z-index: -20;
-}
-@media screen and (max-width: 640px) {
-  #landingCircle {
-    left: 300px;
-    position: absolute;
-    z-index: -20;
-  }
-  #resultsCircle {
-    left: 150px;
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    z-index: -20;
-  }
-  #servicesCircle {
-    top: 2000px;
-    right: 40px;
-    height: 30px;
-    width: auto;
-    position: absolute;
-    z-index: -20;
-  }
-}
-#servicesCircle {
-  right: 100px;
-  height: 30px;
-  width: auto;
-  position: absolute;
-  z-index: -20;
-}
-
-button {
-  padding: 17px 24px;
-  font-family: "Rubik";
-  font-weight: 700;
-  color: white;
-  background: rgb(14, 167, 255);
-  font-size: 18px;
-  border: none;
-  border-radius: 20px;
-}
-button.m1 {
-  margin-right: 1rem;
-}
-.cardHidden {
-  visibility: hidden;
-}
-
 #contactUs {
+  background: #C5B9FF;
+  margin: 45px;
+  padding: 100px 0;
+}
+label {
+  font-weight: 800;
+  margin-bottom: .5rem;
   margin-top: 2rem;
-  background: rgb(14, 22, 29);
-  padding: 2rem;
-}
-#contactUs .maxWidthContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-#contactUs .maxWidthContainer .sender-info div {
-  margin-bottom: 1rem;
-}
-#contactUs form {
-  margin-top: 2rem;
-}
-#contactUs .maxWidthContainer textarea {
-}
-#contactUs .maxWidthContainer label {
   display: block;
 }
-#contactUs .maxWidthContainer input,
-#contactUs .maxWidthContainer textarea {
-  background: none;
-  border: none;
-  border: 1px solid white;
-  color: white;
+input,textarea {
+  border: 4px solid #000;
   padding: 1rem;
-  margin: 1rem 0;
-  resize: none;
-  transition: all 0.3s;
-  outline: none;
-  width: 50%;
+  box-shadow: 10px 10px 0 0 #000;
+  width: 100%;
+  
 }
-@media screen and (max-width: 640px) {
-  #contactUs .maxWidthContainer input,
-  #contactUs .maxWidthContainer textarea {
-    width: 100%;
-  }
-}
-#contactUs .maxWidthContainer input:focus,
-#contactUs .maxWidthContainer textarea:focus {
-  border-bottom: 1px solid rgb(255, 0, 234);
-  outline: none;
-  transition: outline 0.3s;
+button {
+  margin-top: 4rem;
 }
 </style>

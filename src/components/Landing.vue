@@ -1,22 +1,21 @@
 <template>
   <section id="landing">
-    <div class="maxWidthContainer">
-      <div id="landingContent">
-        <h1>We'll create and manage your business's online&nbsp;presence.</h1>
-        <div class="buttonWrapper">
-          <g-link to="/#ourServicesAnchor"
-            ><button class="m1">View Services</button></g-link
-          >
-          <g-link to="/#contact"><button>Contact Us</button></g-link>
-        </div>
+    <div class="maxWidthWrapper">
+      <div class="landing--content">
+        <h1>{{ $static.homepage.headline }}</h1>
+        <button>contact us</button>
       </div>
-      <div id="landingImage">
-        <g-image src="../../static/uploads/3d-Logo.png"></g-image>
-      </div>
+      <g-image id="landingShapes" src="../../static/uploads/figma/landingShapes.svg"></g-image>
     </div>
   </section>
 </template>
-
+<static-query>
+query {
+  homepage(id: "1") {
+    headline
+  } 
+}
+</static-query>
 <script>
 export default {
   data() {
@@ -32,62 +31,73 @@ export default {
 </script>
 
 <style>
-section {
+button {
+  background: #fff;
+  box-shadow: 7px 7px 0 0px #000;
+  padding: .2rem 1rem;
+  font-weight: 800;
+  letter-spacing: -.5px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 10px 10px 0 0px #000;
+}
+#landingShapes {
+  margin-bottom: -95px;
+  z-index: 0;
   position: relative;
 }
-a,
-button {
-  cursor: pointer;
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  max-width: 685px;
+  letter-spacing: -.5px;
+  color: #fff;
+  line-height: 50px;
 }
-#landing .maxWidthContainer {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center;
-  padding: 195px 75px 0 75px;
+#landing {
+  background: #5751fe;
+  height: 485px;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: url('../../static/uploads/figma/grid.svg');
+  background-repeat: no-repeat;
+  margin-top: 4rem; 
+  
 }
-@media screen and (max-width: 1024px) {
-  #landing .maxWidthContainer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    padding: 100px 30px;
-  }
-
-  #landingImage img {
-    max-width: 310px;
-  }
+#landing .maxWidthWrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
 }
-@media screen and (max-width: 640px) {
-  #landingImage {
-    margin: auto;
-  }
-  #landingContent {
-    margin-top: 45px;
-    text-align: center;
-  }
+#landing::after {
+  content: '';
+  background: url('../../static/uploads/figma/Vector 6.svg');
+  width: 35px;
+  bottom: -39px;
+  top:0;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: -35px;
 }
-@media screen and (max-width: 400px) {
-  #landing #landingContent h1 {
-    font-size: 30px;
-    line-height: 37px;
-  }
+#landing::before {
+  content: '';
+  background: url('../../static/uploads/figma/Vector 1.svg');
+  height: 40px;
+  bottom: -40px;
+  position: absolute;
+  right: -35px;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
-#landingContent h1 {
-  font-size: 40px;
-  line-height: 47px;
-  font-family: "Rubik";
-}
-#landingImage img {
-  width: 100%;
-}
-@media screen and (max-width: 400px) {
-  .buttonWrapper button.m1 {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-  .buttonWrapper {
-    display: flex;
-    flex-direction: column;
-  }
+.landing--content {
+  margin-bottom: 2rem;
 }
 </style>
