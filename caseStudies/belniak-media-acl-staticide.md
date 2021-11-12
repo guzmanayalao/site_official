@@ -4,11 +4,8 @@ meta_title: ACL Staticide | Web Design Case Study
 slug: acl-staticide
 categories: Web Design • Web Development
 scope: Web Design • Web Development
-image: /uploads/3d-Logo.png
-vimeo: <div style="padding:58.25% 0 0 0;position:relative;"><iframe
-  src="https://player.vimeo.com/video/379511081?autoplay=1&loop=1&title=0&byline=0&portrait=0"
-  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
-  allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+image: /uploads/belniakProject.png
+vimeo: "null"
 tldr: Belniak Media looked to us to provide them with design and development of
   ACL Staticide's new website. By leveraging Craft's powerful CMS (content
   management system) we were able to build them a fully functional website that
