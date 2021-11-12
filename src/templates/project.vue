@@ -1,14 +1,15 @@
 <template>
   <Layout>
-    <div class="banner " :style="$context.banner">
-      <h1 class="maxWidthContainer">{{ $context.title }}</h1>
+
+    <div class="banner " :style="$context.node.banner || 'background: #5751FE'">
+      <h1 class="maxWidthContainer">{{ $context.node.title }}</h1>
     </div>
     <div class="frameWrapper">
-      <div id="frameContainer" v-if="$context.vimeo">
-        <div v-html="$context.vimeo"></div>
+      <div id="frameContainer" v-if="$context.node.vimeo">
+        <div v-html="$context.node.vimeo"></div>
       </div>
       <div id="frameContainer" class="alt" v-else> 
-        <g-image id="imgPrev" :src="$context.imagePath"></g-image>
+        <g-image id="imgPrev" :src="$context.node.image"></g-image>
 
       </div>
     </div>
@@ -18,10 +19,10 @@
 
       <div class="colLeft">
         <h4>Scope:</h4>
-        <p v-html="$context.scope"></p>
+        <p v-html="$context.node.scope"></p>
         <h4>TLDR;</h4>
         <p>
-          {{ $context.tldr }}
+          {{ $context.node.tldr }}
         </p>
       </div>
       <div class="colRight">
@@ -29,12 +30,12 @@
           The Goal:
         </h4>
         <p>
-          {{ $context.goal }}
+          {{ $context.node.goal }}
         </p>
         <h4>
           How We Did It:
         </h4>
-        <p v-html="$context.how"></p>
+        <p v-html="$context.node.how"></p>
       </div>
       <g-link class="goback" to="/#ourResults">Go Back</g-link>
     </div>
@@ -48,12 +49,12 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$context.mtitle
+      title: this.$context.node.meta_title
     };
   }
 };
 </script>
-<style >
+<style scoped>
 #imgPrev {
   width: 100%;
   margin: 0 auto;
@@ -80,17 +81,7 @@ export default {
   font-family: "Rubik", sans-serif;
   color: #fff;
 }
-button {
-  margin-top: 20px;
-  padding: 17px 24px;
-  font-family: "Rubik";
-  font-weight: 700;
-  color: white;
-  background: rgb(14, 167, 255);
-  font-size: 18px;
-  border: none;
-  border-radius: 20px;
-}
+
 .frameWrapper {
   background: black;
 }

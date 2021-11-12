@@ -28,8 +28,11 @@
    
     
 
-    <!-- a wrapper for slot is needed -->
-    <slot />
+    <transition name="fade" appear>
+        <main> <!-- a wrapper for slot is needed -->
+          <slot /> <!-- the content -->
+        </main>
+      </transition>
     <!-- the content -->
   </div>
 </template>
@@ -53,7 +56,13 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+.fade-enter-active {
+  transition: opacity .5s;
+}
 
+.fade-enter {
+  opacity: 0;
+}
 body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;

@@ -10,9 +10,9 @@
         
 
         <div id="ourResultsSlider">
-          <article v-for="(edge, i) in $static.allCaseStudies.edges" :key="i">
+          <article v-for="(edge, i) in $static.allCaseStudies.edges.slice().reverse()" :key="i">
             <div class="projectImageWrapper">
-              <g-image src="~/dedicatedrunners.png"></g-image>
+              <g-image :src="edge.node.image"></g-image>
             </div>
             <div class="content">
               <h3>{{  edge.node.title }}</h3>
@@ -20,154 +20,13 @@
                 <p>
                 {{  edge.node.goal }}
                 </p>
-                <g-link class="readMoreLink" :to=" `/partners/${edge.node.slug}`"
-                  ><button>Read More 1 {{edge.node.slug}} </button></g-link
+                <g-link class="readMoreLink" :to=" `/case-studies/${edge.node.slug}`"
+                  style="margin-top: auto;"><button>Read More</button></g-link
                 >
             </div>
             
           </article>
-          <!-- <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/aaii.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>AAII</h3>
-              <p class="tags">Web Design &bull; Web Development</p>
-              <p>
-              As a principal member of AAII's tech team, we were tasked with developing the front end of their website redesign..
-              </p>
-              <g-link class="readMoreLink" to="/partners/American-Association-of-Individual-Investors/"
-                ><button>Read More</button></g-link
-              >
-            </div>
-            
-          </article>
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/ssr.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>Stock Superstars Report</h3>
-              
-              <p class="tags">Web Design &bull; Web Development</p>
-              <p>
-              SSR is an AAII product. We were tasked with redesigning and rebuilding a website that was over a decade old..
-              </p>
-              <g-link class="readMoreLink" to="/partners/Stock-Superstars-Report/"
-                ><button>Read More</button></g-link
-              >
-            </div>
-            
-          </article>
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/belniakProject.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>ACL, Inc. (B.M)</h3>
-            
-              <p class="tags">Web Design &bull; Web Development</p>
-              <p>
-                (Contracted by Belniak Media) ACL needed a major website remake.
-                Our sister company, Belniak Media, trusted us ...
-              </p>
-              <g-link class="readMoreLink" to="/partners/ACL/"><button>Read More</button></g-link>
-            </div>
-            
-          </article>
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/belniak.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>Belniak Media</h3>
-              
-              <p class="tags">Web Design &bull; Web Development</p>
-              <p>
-                Belniak Media has trusted us to
-                deliver their front development and graphic design ...
-              </p>
-              <g-link class="readMoreLink" to="/partners/Belniak-Media/"
-                ><button>Read More</button></g-link
-              >
-            </div>
-            
-          </article>
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/benji.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>Benji</h3>
-            
-              <p class="tags">
-                Branding &bull; Web Design &bull; Web Development &bull; Marketing
-              </p>
-
-              <p>
-                Benji is an Artist out of Chicago, IL. He needed help branding
-                himself as an artist; so we helped him out. First, we explored
-                Benji's intrests...
-              </p>
-              <g-link class="readMoreLink" to="/partners/Benji/"
-                ><button>Read More</button></g-link
-              >
-            </div>
-            
-          </article>
           
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/erw.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>Enhanced Report Writer (B.M)</h3>
-            
-              <p class="tags">Web App Design &bull; Web App Development</p>
-              <p>
-                (Contracted By Belniak Media) Belniak Media has trusted us to
-                design and develop ERW's new app...
-              </p>
-              <g-link class="readMoreLink" disabled>Coming Soon</g-link>
-            </div>
-            
-          </article>
-
-          <article>
-            <div class="projectImageWrapper">
-              <g-image src="../../static/uploads/musella.png"></g-image>
-            </div>
-            <div class="content">
-              <h3>Musella Brain Tumor Foundation</h3>
-
-              
-              <p class="tags">Web Development</p>
-              <p>
-                Musella needed their design brought to life. By using modern
-                development...
-              </p>
-              <g-link class="readMoreLink" disabled>Coming Soon</g-link>
-            </div>
-            
-          </article>
-          <article>
-            <div class="projectImageWrapper">
-              <g-image
-                src="../../static/uploads/greatLakesLining.png"
-              ></g-image>
-            </div>
-            <div class="content">
-              <h3>Great Lakes Lining</h3>
-            
-              <p class="tags">Logo Design &bull; Web Development</p>
-              <p>
-                As one of our main partners, Belniak Media has trusted us to
-                deliver their front development and graphic design ...
-              </p>
-              <g-link class="readMoreLink" disabled>Coming Soon</g-link>
-            </div>
-            
-          </article> -->
 
           <article class="cardHidden"></article>
           <article class="cardHidden"></article>
@@ -185,7 +44,8 @@ query {
         title,
         scope,
         goal,
-        slug
+        slug,
+        image
       }
     }
   } 
@@ -204,7 +64,11 @@ export default {
   }
 };
 </script>
-
+<style scoped>
+button {
+  margin: 0 !important;
+}
+</style>
 <style>
 #ourResults {
   overflow: auto;
@@ -345,13 +209,15 @@ export default {
 }
 #ourResultsSlider article {
   margin-right: 3rem;
+  width: 360px;
+
 }
 
 #ourResultsSlider article img {
   height: 400px;
-  width: 360px;
+  width: 100%;
   object-fit: cover;
-  object-position: 0 0;
+  object-position: top center;
 }
 #ourResultsSlider article .content{
   max-width: 330px;
@@ -362,7 +228,8 @@ export default {
   transition: 0.2s;
   margin: 0;
   justify-content: flex-start;
-  min-height: 250px;
+  min-height: 30%;
+  margin-bottom: 1rem;
 }
 
 
