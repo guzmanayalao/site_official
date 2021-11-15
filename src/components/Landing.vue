@@ -1,11 +1,13 @@
 <template>
-  <section id="landing">
+  <section id="landing" :class="[ alt ? 'alt' : '']">
     <div class="maxWidthWrapper">
       <div class="landing--content">
-        <h1>{{ $static.homepage.headline }}</h1>
+        <h1 v-if="alt">Case Study: {{ altData }} </h1>
+        <h1 v-else>{{ $static.homepage.headline }}</h1>
+
         <button>contact us</button>
       </div>
-      <g-image id="landingShapes" src="../../static/uploads/figma/landingShapes.svg"></g-image>
+      <g-image v-if="!alt" id="landingShapes" src="../../static/uploads/figma/landingShapes.svg"></g-image>
     </div>
   </section>
 </template>
@@ -23,6 +25,7 @@ export default {
       translateVal: 0
     };
   },
+  props: ['alt', 'altData'],
   methods: {},
   mounted() {
     // window.addEventListener('scroll', this.handleScroll);
@@ -41,6 +44,7 @@ button {
   transition: all .2s;
   font-family: "Inter", sans-serif;
   font-size: 18px;
+  margin-top: 0 !important;
 }
 button:hover {
   transform: translateY(-3px);
@@ -70,6 +74,11 @@ h1 {
   background-repeat: no-repeat;
   margin-top: 4rem; 
   
+}
+#landing.alt {
+  height: 290px; 
+  padding: 0 3rem;
+  margin-bottom: 6rem;
 }
 #landing .maxWidthWrapper {
   display: flex;

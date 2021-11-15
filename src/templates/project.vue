@@ -1,10 +1,13 @@
 <template>
   <Layout>
 
-    <div class="banner " :style="$context.node.banner || 'background: #5751FE'">
+    <Landing :alt="true" :altData="$context.node.title"></Landing>
+
+
+    <!-- <div class="banner " :style="$context.node.banner || 'background: #5751FE'">
       <h1 class="maxWidthContainer">{{ $context.node.title }}</h1>
-    </div>
-    <div class="frameWrapper">
+    </div> -->
+    <!-- <div class="frameWrapper">
       <div id="frameContainer" v-if="$context.node.vimeo">
         <div v-html="$context.node.vimeo"></div>
       </div>
@@ -12,13 +15,12 @@
         <g-image id="imgPrev" :src="$context.node.image"></g-image>
 
       </div>
-    </div>
+    </div> -->
 
-    <div class="maxWidthContainer colDetails">
-      <g-link class="goback" to="/#ourResults"><button>Go Back</button></g-link>
+    <div class="maxWidthWrapper colDetails">
 
       <div class="colLeft">
-        <h4>Scope:</h4>
+        <h4>Services &amp; Technology:</h4>
         <p v-html="$context.node.scope"></p>
         <h4>TLDR;</h4>
         <p>
@@ -36,16 +38,23 @@
           How We Did It:
         </h4>
         <p v-html="$context.node.how"></p>
+        <g-link class="goback" to="/#ourResults"><button>Go Back</button></g-link>
+
       </div>
-      <g-link class="goback" to="/#ourResults">Go Back</g-link>
     </div>
   </Layout>
 </template>
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+import Landing from "../components/Landing.vue"
+
+
 export default {
   data() {
     return {};
+  },
+  components: {
+    Landing
   },
   metaInfo() {
     return {
@@ -60,7 +69,7 @@ export default {
   margin: 0 auto;
   display: block;
 }
-.maxWidthContainer {
+.maxWidthWrapper {
   max-width: 1400px;
   margin: auto;
 }
@@ -97,9 +106,8 @@ export default {
 }
 .colDetails {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 3rem 0;
-  max-width: 1000px;
 }
 .colLeft {
   padding: 0 2rem;
@@ -138,15 +146,6 @@ export default {
   margin-bottom: 0.5rem;
   font-size: 24.48px;
   font-weight: bold;
-
-  background: rgb(99, 246, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(99, 246, 255, 1) 0%,
-    rgb(255, 0, 234) 20%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 #frameContainer {
   max-width: 1000px;
