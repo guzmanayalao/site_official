@@ -75,7 +75,7 @@
         </form>
       </div>
     </section> 
-    <OurTeam ></OurTeam>
+    <OurTeam ></OurTeam> 
     
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
