@@ -10,6 +10,27 @@
     <OurMission v-scroll-reveal="{ distance: '200px' }"></OurMission>
     <ConsultationsBanner v-scroll-reveal="{ distance: '200px' }"></ConsultationsBanner>
     <Ideas v-scroll-reveal="{ distance: '200px' }"></Ideas>
+
+    <section>
+      <div class="maxWidthWrapper">
+        <h2 class="large" id="contact">FAQ</h2>
+        <div class="faqs">
+          <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
+          <div class="faq" v-for="(faq, i) in faqs" :key="i">
+            <p class="faq--question" @click="faqActive = i">
+              {{ faq.question }} 
+              <font-awesome-icon>fas fa-caret-down</font-awesome-icon>
+            
+            </p>
+            <p class="faq--answer" :style="[ faqActive == i ? { 'display': 'block' } : {'display': 'none'} ]">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section id="contactUs" >
       <div class="maxWidthWrapper" v-scroll-reveal="{ distance: '200px', interval: 30 }">
         <h2 class="large" id="contact">Let's Get In Touch</h2>
@@ -53,7 +74,7 @@
         </form>
       </div>
     </section> 
-
+    
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
 </template>
@@ -76,6 +97,16 @@ export default {
   data() {
     return {
       formData: {},
+      messageColor: '',
+      successMessage: '',
+      faqActive: null,
+      faqs: [
+        {
+          question: "How much do you charge?",
+          answer: "We charge between $50 and $100 per hour depending on what your project is. Our consultations are free, so contact us today for a quick quote! We also offer lots of promotions and incentives for refferals, new, or returning customers."
+        }
+      ],
+      
     };
   },
   metaInfo: {
@@ -133,6 +164,26 @@ export default {
 </script>
 
 <style>
+.faq {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 0 1rem;
+  box-shadow: 10px 10px 0 0 #000;
+  margin-top: 2rem;
+  max-width: 80%;
+  cursor: pointer;
+  transition: all .2s; 
+}
+.faq:hover {
+  transform: translateY(-3px);
+  box-shadow: 15px 15px 0 0px #000;
+}
+.faq .faq--answer {
+  display: none;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid #000;
+}
 .maxWidthWrapper {
   max-width: 1280px;
   margin: 0 auto;
