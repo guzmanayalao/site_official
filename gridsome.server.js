@@ -9,19 +9,19 @@
 module.exports = function(api) {
 
   var fs = require('fs');
-  var files = fs.readdirSync('./dist/assets/static/');
+  // var files = fs.readdirSync('./dist/assets/static/');
 
   
-  function getImagePath(startsWith) {
+  // function getImagePath(startsWith) {
 
-    for ( let i = 0 ; i <= files.length; i++ ) {
-      if ( files[i].split(".")[0] == startsWith ) {
-        console.log(files[i].split(".")[0], startsWith );
-        return `/dist/asset/src/${files[i]}`
-      } 
-    }
+  //   for ( let i = 0 ; i <= files.length; i++ ) {
+  //     if ( files[i].split(".")[0] == startsWith ) {
+  //       console.log(files[i].split(".")[0], startsWith );
+  //       return `/dist/asset/src/${files[i]}`
+  //     } 
+  //   }
         
-  }
+  // }
 
 
   // console.log(files)
