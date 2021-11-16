@@ -1,15 +1,13 @@
 <template>
   <Layout>
     
-    <Landing v-scroll-reveal="{ distance: '200px' }"></Landing>
-    <Introduction v-scroll-reveal="{ distance: '200px' }"></Introduction>
-    <PartnersBanner v-scroll-reveal="{ distance: '200px' }"></PartnersBanner>
-    <OurServices v-scroll-reveal="{ distance: '200px' }"></OurServices>
-    <OurResults v-scroll-reveal="{ distance: '200px' }"></OurResults>
-    <OurTeam v-scroll-reveal="{ distance: '200px' }"></OurTeam>
-    <OurMission v-scroll-reveal="{ distance: '200px' }"></OurMission>
-    <ConsultationsBanner v-scroll-reveal="{ distance: '200px' }"></ConsultationsBanner>
-    <Ideas v-scroll-reveal="{ distance: '200px' }"></Ideas>
+    <Landing ></Landing>
+    <Introduction ></Introduction>
+    <PartnersBanner ></PartnersBanner>
+    <OurServices ></OurServices>
+    <OurResults ></OurResults>
+    <OurMission ></OurMission>
+    <ConsultationsBanner ></ConsultationsBanner>
 
     <section>
       <div class="maxWidthWrapper">
@@ -17,12 +15,14 @@
         <div class="faqs">
           <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
           <div class="faq" v-for="(faq, i) in faqs" :key="i">
-            <p class="faq--question" @click="faqActive = i">
+            <p class="faq--question" @click="faqActive = i"  :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
               {{ faq.question }} 
-              <font-awesome-icon>fas fa-caret-down</font-awesome-icon>
+              <font-awesome icon="caret-up" v-if="faqActive === i "></font-awesome>
+              <font-awesome icon="caret-down" v-else></font-awesome>
+
             
             </p>
-            <p class="faq--answer" :style="[ faqActive == i ? { 'display': 'block' } : {'display': 'none'} ]">
+            <p class="faq--answer" :style="[ faqActive === i ? { 'display': 'block' } : {'display': 'none'} ]">
               {{ faq.answer }}
             </p>
           </div>
@@ -30,9 +30,10 @@
       </div>
     </section>
 
+    <Ideas ></Ideas>
 
     <section id="contactUs" >
-      <div class="maxWidthWrapper" v-scroll-reveal="{ distance: '200px', interval: 30 }">
+      <div class="maxWidthWrapper">
         <h2 class="large" id="contact">Let's Get In Touch</h2>
         <p>
           Let's figure out how we can help you create and/or manage your online
@@ -74,6 +75,7 @@
         </form>
       </div>
     </section> 
+    <OurTeam ></OurTeam>
     
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
@@ -103,8 +105,20 @@ export default {
       faqs: [
         {
           question: "How much do you charge?",
-          answer: "We charge between $50 and $100 per hour depending on what your project is. Our consultations are free, so contact us today for a quick quote! We also offer lots of promotions and incentives for refferals, new, or returning customers."
-        }
+          answer: "We charge between $50 and $100 per hour depending on what your project is. Our consultations are free, so contact us today for a quick quote! We also offer lots of promotions and incentives for refferals, new, and returning customers."
+        },
+        {
+          question: "Do you design AND code websites?",
+          answer: "Yes! We are a web design and web development company. We also do digital marketing."
+        },
+        {
+          question: "Do you design logos?",
+          answer: "Yes! We specialize in logos and branding in general. "
+        },
+        {
+          question: "Do you do facebook/social media ads?",
+          answer: "Yes! We offer social media and google advertising. "
+        },
       ],
       
     };
@@ -167,7 +181,6 @@ export default {
 .faq {
   background: #fff;
   border: 3px solid #000;
-  padding: 0 1rem;
   box-shadow: 10px 10px 0 0 #000;
   margin-top: 2rem;
   max-width: 80%;
@@ -180,9 +193,17 @@ export default {
 }
 .faq .faq--answer {
   display: none;
-  padding-right: 2rem;
-  padding-top: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0;
   border-top: 2px solid #000;
+}
+.faq .faq--question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+
 }
 .maxWidthWrapper {
   max-width: 1280px;

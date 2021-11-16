@@ -11,7 +11,10 @@ import {
   faCode,
   faPalette,
   faSearchDollar,
-  faTimes
+  faTimes,
+  faCaretDown,
+  faCaretUp
+
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -41,7 +44,9 @@ library.add(
   faCode,
   faPalette,
   faSearchDollar,
-  faTimes
+  faTimes,
+  faCaretUp,
+  faCaretDown
 );
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component

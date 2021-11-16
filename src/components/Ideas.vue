@@ -3,6 +3,7 @@
     
     <div class="maxWidthWrapper">
       <h2 class="large">Ideas + Posts</h2>
+      <p class="large">Blog posts and free marketing ideas/tips for your business.</p>
       <div id="ideasDescriptions">
         <div class="descriptionItem" id="description_webDevelopment">
           <h3>Web Development</h3>
