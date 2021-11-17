@@ -2,6 +2,7 @@
   <section id="ourServices">
     
     <div class="maxWidthWrapper">
+      <h2 class="large underline underline--green">Services</h2>
       <div id="ourServicesDescriptions">
         <g-image id="shapesBlue" src="../../static/uploads/figma/shapesBlue.svg"></g-image>
         <div class="descriptionItem" id="description_webDevelopment">
@@ -9,7 +10,6 @@
           <p>
             {{ $static.homepage.service1_content }} 
           </p>
-          <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_webDesign">
           <h3>
@@ -18,7 +18,6 @@
           <p>
             {{ $static.homepage.service2_content }} 
           </p>
-          <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_marketing">
           <h3>
@@ -27,18 +26,18 @@
           <p>
            {{ $static.homepage.service3_content }} 
           </p>
-          <button>See All Services</button>
         </div>
         <div class="descriptionItem" id="description_marketing">
           <h3>
             {{ $static.homepage.service4_headline }} 
           </h3>
-          <p class="large" style="max-width: unset">
+          <p class="large" style="max-width:unset">
             {{ $static.homepage.service4_content }} 
           </p>
-          <button>See How</button>
+          <!-- <button>See How</button> -->
         </div>
       </div>
+      <button>See A List of All Services</button>
     </div>
   </section>
 </template>
@@ -70,11 +69,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #shapesBlue {
   position: absolute;
-  top: -150px;
-  left: 100px;
+  top: 0px;
+  left: -20px;
+  z-index: -1;
 }
 #ourServices {
   margin: 135px 0;
@@ -92,7 +92,9 @@ export default {
   margin-right: 4rem;
   flex-grow: 1;
   flex-basis: calc( 100px / 3 ); 
-
+  button {
+    margin-bottom: 2rem !important;
+  }
 }
 .descriptionItem:last-of-type {
   flex-grow: 3;
@@ -100,9 +102,10 @@ export default {
   margin-top: 4rem; 
   
 }
-.descriptionItem button {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+#ourServices .maxWidthWrapper > button {
+  margin: 4rem auto 0 auto !important;
+  display: block;
+
 }
 .descriptionItem::after {
   width: 20px;

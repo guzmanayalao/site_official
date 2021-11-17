@@ -10,7 +10,7 @@
             alt="Site logo"
           >
           </g-image> 
-          <span>Site, LLC</span>
+          <span>Site | Web Design &amp; Marketing Agency</span>
         </g-link>
         <div>
           <a href="/#ourResults">Results</a>
@@ -54,8 +54,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+$yellow: #FFC700;
+$blue: #5751FE;
+$purple: #A25AFF;
+$red: #F24F1F; 
+$green: #0FAA58; 
 .fade-enter-active {
   transition: opacity .5s;
 }
@@ -125,7 +131,7 @@ h2.large {
   font-size: 64px;
   font-weight: 900;
   margin-bottom: 30px;
-  letter-spacing: -1px;
+  letter-spacing: -2.2px;
 }
 .underline {
   position: relative;
@@ -133,13 +139,25 @@ h2.large {
 .underline::after {
   content: '';
   height: 18px;
-  width: 70px;
+  width: 65px;
   position: absolute;
   left: 0;
-  bottom: 15px; 
+  bottom: 7px; 
   z-index: -1;
 }
 .underline.underline--yellow::after {
-  background: #FFC700;
+  background: $yellow;
+}
+.underline.underline--blue::after {
+  background: $blue;
+}
+.underline.underline--red::after {
+  background: $red;
+}
+.underline.underline--purple::after {
+  background: $purple;
+}
+.underline.underline--green::after {
+  background: $green;
 }
 </style>

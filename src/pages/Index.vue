@@ -11,11 +11,13 @@
 
     <section>
       <div class="maxWidthWrapper">
-        <h2 class="large" id="contact">FAQ</h2>
+        <h2 class="large underline underline--blue" id="contact">FAQ</h2>
         <div class="faqs">
           <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
           <div class="faq" v-for="(faq, i) in faqs" :key="i">
-            <p class="faq--question" @click="faqActive = i"  :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
+            <p class="faq--question" 
+              @click="faqActive = i"  
+              :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
               {{ faq.question }} 
               <font-awesome icon="caret-up" v-if="faqActive === i "></font-awesome>
               <font-awesome icon="caret-down" v-else></font-awesome>
@@ -30,7 +32,6 @@
       </div>
     </section>
 
-    <Ideas ></Ideas>
 
     <section id="contactUs" >
       <div class="maxWidthWrapper">
@@ -75,7 +76,9 @@
         </form>
       </div>
     </section> 
+
     <OurTeam ></OurTeam> 
+    <Ideas ></Ideas>
     
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
@@ -147,7 +150,7 @@ export default {
         })
           .then(() => {
             this.messageColor = "green";
-            this.successMessage = "Thank you for contacting Site!";
+            this.successMessage = "Thank you for contacting Site, a team member will reach out to you by email in 1-4 hours. ";
           })
           .catch(error => {
             this.messageColor = "#db4040";
@@ -177,13 +180,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+$yellow: #FFC700;
+$blue: #5751FE;
+$purple: #A25AFF;
+$red: #F24F1F; 
+$green: #0FAA58; 
+
 .faq {
   background: #fff;
   border: 3px solid #000;
   box-shadow: 10px 10px 0 0 #000;
   margin-top: 2rem;
-  max-width: 80%;
+  max-width: 55%;
   cursor: pointer;
   transition: all .2s; 
 }

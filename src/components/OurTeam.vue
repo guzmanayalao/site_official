@@ -3,7 +3,7 @@
       <div class="maxWidthWrapper">
         <g-image src="../../static/uploads/figma/team.png"></g-image>
         <div id="ourTeamContent">
-          <h2 class="large">Team</h2>
+          <h2 class="large underline underline--red">Team</h2>
           <p class="large">We are a latino founded agency born and raised here in Chicago. Chicago and the Latino community at large produce a great amount of business for our cities. Our mission is to make sure local businesses like those in Chicago are able to compete in the forever evolving world of the web. Our team has offices located in Little Village and Streeterville in Chicago.  </p>
           <button>Learn More</button>
         </div>

@@ -33,18 +33,28 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+$yellow: #FFC700;
+$blue: #5751FE;
+$purple: #A25AFF;
+$red: #F24F1F; 
+$green: #0FAA58; 
 button {
   background: #fff;
   box-shadow: 7px 7px 0 0px #000;
-  padding: .2rem 1rem;
-  font-weight: 800;
+  padding: .35rem 1rem;
+  font-weight: 700;
   letter-spacing: -.5px;
   cursor: pointer;
   transition: all .2s;
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 0 !important;
+  &--yellow {
+    background: $yellow;
+  }
 }
 button:hover {
   transform: translateY(-3px);

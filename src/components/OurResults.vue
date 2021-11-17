@@ -3,7 +3,7 @@
 
 
     <div class="maxWidthWrapper">
-      <h2 class="large underline underline--yellow">Case Studies</h2>
+      <h2 class="large underline underline--red">Case Studies</h2>
     </div>
    <div class="maxWidthContainer">
       <div class="sliderContainer">

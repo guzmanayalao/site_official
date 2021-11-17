@@ -21,7 +21,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
+$yellow: #FFC700;
+$blue: #5751FE;
+$purple: #A25AFF;
+$purpleLight: #C5B9FF;
+$red: #F24F1F; 
+$green: #0FAA58; 
+
 #consultationsBanner {
   background: #000;
   padding: 2rem;
@@ -34,6 +42,14 @@ export default {
   color: #fff; 
   align-items: center;
 
+}
+#consultationsBanner button {
+  background: $purpleLight;
+  box-shadow: 5px 5px 0 0 #fff;
+  &:hover {
+    box-shadow: 10px 10px 0 0 #fff;
+    
+  }
 }
 #consultationsBanner p {
   font-size: 24px;
