@@ -7,7 +7,7 @@
     <OurServices ></OurServices>
     <OurResults ></OurResults>
     <OurMission ></OurMission>
-    <!-- <ConsultationsBanner ></ConsultationsBanner> -->
+    <ConsultationsBanner ></ConsultationsBanner>
 
     <section>
       <div class="maxWidthWrapper">
@@ -234,6 +234,7 @@ $green: #0FAA58;
   box-sizing: border-box; 
   @media screen and (max-width: 700px) {
     margin: 50px 0;
+    padding: 30px 0;
   }
 }
 label {
@@ -252,5 +253,8 @@ input,textarea {
 }
 button {
   margin-top: 4rem;
+}
+form button {
+  margin-top: 2rem !important; 
 }
 </style>
