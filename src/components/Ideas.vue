@@ -67,7 +67,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #ideas {
   margin: 135px 0;
 }
@@ -86,6 +86,9 @@ export default {
   flex-basis: 50%; 
   flex-shrink: 1;
   margin-top: 4rem;
+  @media screen and (max-width: 700px) {
+    margin-top: 1rem;
+  }
 
 }
 .descriptionItem:last-of-type {
@@ -93,7 +96,9 @@ export default {
   flex-basis: 20%; 
   flex-shrink: 1;
 
-  
+  @media screen and (max-width: 700px) {
+    margin-top: 1rem;
+  }
 }
 .descriptionItem button {
   margin-top: 4rem;

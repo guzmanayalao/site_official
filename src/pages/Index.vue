@@ -7,7 +7,7 @@
     <OurServices ></OurServices>
     <OurResults ></OurResults>
     <OurMission ></OurMission>
-    <ConsultationsBanner ></ConsultationsBanner>
+    <!-- <ConsultationsBanner ></ConsultationsBanner> -->
 
     <section>
       <div class="maxWidthWrapper">
@@ -197,6 +197,9 @@ $green: #0FAA58;
   max-width: 55%;
   cursor: pointer;
   transition: all .2s; 
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+  }
 }
 .faq:hover {
   transform: translateY(-3px);
@@ -219,11 +222,19 @@ $green: #0FAA58;
 .maxWidthWrapper {
   max-width: 1280px;
   margin: 0 auto;
+  @media screen and (max-width: 1600px) {
+    padding: 1.5rem;
+  }
+  box-sizing: border-box; 
 }
 #contactUs {
   background: #C5B9FF;
   margin: 45px;
   padding: 100px 0;
+  box-sizing: border-box; 
+  @media screen and (max-width: 700px) {
+    margin: 50px 0;
+  }
 }
 label {
   font-weight: 800;
@@ -236,6 +247,7 @@ input,textarea {
   padding: 1rem;
   box-shadow: 10px 10px 0 0 #000;
   width: 100%;
+  box-sizing: border-box;
   
 }
 button {

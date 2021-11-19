@@ -168,6 +168,16 @@ button {
   border-radius: 20px;
   margin-right: 400px;
 }
+@media screen and (min-width: 2000px) {
+  #ourResultsSlider::-webkit-scrollbar-track,
+  #ourResults::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+    margin-left: 700px;
+    margin-right: 100px;
+  
+  }
+}
 @media screen and (max-width: 2000px) {
   #ourResultsSlider::-webkit-scrollbar-track,
   #ourResults::-webkit-scrollbar-track {

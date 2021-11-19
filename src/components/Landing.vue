@@ -64,6 +64,7 @@ button:hover {
   margin-bottom: -95px;
   z-index: 0;
   position: relative;
+  width: 50%;
 }
 h1 {
   font-family: "Inter", sans-serif;
@@ -73,6 +74,11 @@ h1 {
   letter-spacing: -.5px;
   color: #fff;
   line-height: 50px;
+  @media screen and (max-width: 600px) {
+    font-size: 22px; 
+    letter-spacing: -.2px;
+    line-height: 30px;
+  }
 }
 #landing {
   background: #5751fe;
@@ -84,6 +90,43 @@ h1 {
   background-repeat: no-repeat;
   margin-top: 4rem; 
   
+}
+@media screen and (max-width: 600px) {
+  section#landing {
+    margin: .25rem 3rem 0 .5rem;
+  } 
+  section#landing::before {
+    right: -29px;
+  }
+  section#landing::after {
+    width: 30px !important;
+    right: -30px !important;
+    bottom: -5px !important;
+
+  }
+  
+}
+@media screen and (max-width: 1600px) {
+  #landing {
+    padding: 1rem .5rem;
+    box-sizing: border-box;
+    margin: 2rem 4rem 0 2rem;
+
+  }
+  #landing::after {
+    bottom: -10px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #landingShapes {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #landingShapes {
+    display: none;
+  }
 }
 #landing.alt {
   height: 290px; 

@@ -1,5 +1,5 @@
 <template>
-  <section id="ourServices">
+  <section id="introduction">
     <div class="maxWidthWrapper">
       <h2 class="large underline underline--yellow">What We Do</h2>
       <p class="large">{{ $static.homepage.introduction }}</p>
@@ -28,8 +28,12 @@ export default {
 };
 </script>
 
-<style>
-#ourServices {
+<style lang="scss">
+#introduction {
   margin: 185px 0;
+  @media screen and (max-width: 600px) {
+    margin: 50px 0;
+  }
 }
+
 </style>

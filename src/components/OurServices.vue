@@ -73,12 +73,18 @@ export default {
 #shapesBlue {
   position: absolute;
   top: 0px;
-  left: -20px;
+  left: -260px;
   z-index: -1;
 }
 #ourServices {
   margin: 135px 0;
+  @media screen and (max-width: 600px) {
+    margin: 50px 0;
+  }
+}
+#ourServices .maxWidthWrapper {
   position: relative;
+
 }
 #ourServicesDescriptions {
   display: flex;
@@ -95,16 +101,26 @@ export default {
   button {
     margin-bottom: 2rem !important;
   }
+  @media screen and (max-width: 700px) {
+      flex-basis: 100%;
+      margin-bottom: 3rem;
+      margin-right: 1rem;
+  }
 }
 .descriptionItem:last-of-type {
   flex-grow: 3;
   flex-basis: 100%; 
   margin-top: 4rem; 
-  
+  @media screen and (max-width: 700px) {
+    margin-top: 0;
+  }
 }
 #ourServices .maxWidthWrapper > button {
   margin: 4rem auto 0 auto !important;
   display: block;
+  @media screen and (max-width: 700px) {
+    margin-top: 1rem;
+  }
 
 }
 .descriptionItem::after {

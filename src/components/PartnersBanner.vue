@@ -39,6 +39,8 @@ export default {
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
+  overflow-x: auto;
+
 }
 #partnersBanner img{
   height: auto; 
@@ -46,6 +48,7 @@ export default {
   filter: grayscale(1);
   opacity: .7;
   object-fit: contain;
+  margin-right: 2rem;
 }
 #partnersBanner img:hover{
 
