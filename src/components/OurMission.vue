@@ -5,7 +5,7 @@
         <h2 class="large underline underline--yellow">Testimonials</h2>
         <div class="testimonialCards">
           
-          <div class="card">
+          <!-- <div class="card">
             <div class="avatar">
               <g-image src="../../static/uploads/gary.jpg"></g-image>
             </div>
@@ -22,7 +22,7 @@
                 <p>CEO, Belniak Media</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="card">
             <div class="avatar">
               <g-image src="../../static/uploads/jimmy.jpg"></g-image>

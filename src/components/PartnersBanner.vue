@@ -2,9 +2,9 @@
   <section id="partnersBanner">
     <div class="maxWidthWrapper-large">
       <g-image style="filter: invert(1)" src="../../static/uploads/figma/aaii.png" alt=""></g-image>
-      <g-image src="../../static/uploads/figma/acl.svg" alt=""></g-image>
+      <!-- <g-image src="../../static/uploads/figma/acl.svg" alt=""></g-image> -->
       <g-image src="../../static/uploads/figma/gll.svg" alt=""></g-image>
-      <g-image style="filter: invert(1)"  src="../../static/uploads/figma/belniak.png" alt=""></g-image>
+      <!-- <g-image style="filter: invert(1)"  src="../../static/uploads/figma/belniak.png" alt=""></g-image> -->
       <g-image src="../../static/uploads/figma/SSR.png" alt=""></g-image>
       <g-image src="../../static/uploads/LOGO@2x.png" alt=""></g-image>
 
