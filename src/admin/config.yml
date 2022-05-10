@@ -13,6 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -24,9 +25,34 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Page Headline H1", name: "headline", widget: "string" }
+      - { label: "Introduction Paragrah", name: "introduction", widget: "string" }
+      - { label: "Service Type 1 Heading", name: "service1_headline", widget: "string" }
+      - { label: "Service Type 2 Heading", name: "service2_headline", widget: "string" }
+      - { label: "Service Type 3 Heading", name: "service3_headline", widget: "string" }
+      - { label: "Service Type 4 Heading", name: "service4_headline", widget: "string" }
+      - { label: "Service Type 1 Content", name: "service1_content", widget: "markdown" }
+      - { label: "Service Type 2 Content", name: "service2_content", widget: "markdown" }
+      - { label: "Service Type 3 Content", name: "service3_content", widget: "markdown" }
+      - { label: "Service Type 4 Content", name: "service4_content", widget: "markdown" }
+
+      - { label: "Team Paragraph", name: "team", widget: "markdown" }
       # - { label: "Excerpt", name: "excerpt", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "date" }
-      - { label: "ID", name: "id", widget: "string" }
       # - { label: "Body", name: "body", widget: "markdown" }
       # - { label: "Body2", name: "body2", widget: "markdown" }
+  - name: "caseStudies"
+    label: "Case Studies"
+    folder: "caseStudies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "MetaTitle", name: "meta_title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Categories", name: "categories", widget: "markdown" }
+      - { label: "Scope", name: "scope", widget: "markdown" }
+      - { label: "Tall Image", name: "image", widget: "image" }
+      - { label: "Vimeo Link", name: "vimeo", widget: "string" }
+      - { label: "TLDR", name: "tldr", widget: "markdown" }
+      - { label: "Goal", name: "goal", widget: "string" }
+      - { label: "How", name: "how", widget: "markdown" }

@@ -1,30 +1,41 @@
 <template>
-  <Layout @scroll="handleScroll">
-    <Landing />
-    <g-image
-      id="landingCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 2 + 'px)' }"
-    ></g-image>
-    <OurResults />
-    <g-image
-      id="resultsCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 4 + 'px)' }"
-    ></g-image>
-    <div id="ourServicesAnchor" style="height: 1px"></div>
-    <OurServices />
-    <g-image
-      id="servicesCircle"
-      src="../../static/uploads/gradientCircle.png"
-      :style="{ transform: 'translateY(' + -translateVal / 6 + 'px)' }"
-    ></g-image>
-    <OurMission />
-    <OurTeam />
+  <Layout>
+    
+    <Landing ></Landing>
+    <Introduction ></Introduction>
+    <PartnersBanner ></PartnersBanner>
+    <OurServices ></OurServices>
+    <OurResults ></OurResults>
+    <OurMission ></OurMission>
+    <ConsultationsBanner ></ConsultationsBanner>
 
-    <section id="contactUs">
-      <div class="maxWidthContainer">
-        <h2 id="contact">Let's Get In Touch</h2>
+    <section>
+      <div class="maxWidthWrapper">
+        <h2 class="large underline underline--blue" id="contact">FAQ</h2>
+        <div class="faqs">
+          <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
+          <div class="faq" v-for="(faq, i) in faqs" :key="i">
+            <p class="faq--question" 
+              @click="faqActive = i"  
+              :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
+              {{ faq.question }} 
+              <font-awesome icon="caret-up" v-if="faqActive === i "></font-awesome>
+              <font-awesome icon="caret-down" v-else></font-awesome>
+
+            
+            </p>
+            <p class="faq--answer" :style="[ faqActive === i ? { 'display': 'block' } : {'display': 'none'} ]">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contactUs" >
+      <div class="maxWidthWrapper">
+        <h2 class="large" id="contact">Let's Get In Touch</h2>
         <p>
           Let's figure out how we can help you create and/or manage your online
           presence. (Our consultations are totally free.)
@@ -56,49 +67,70 @@
           </div>
 
           <div class="message-wrapper">
-            <label for="message">Message</label>
+            <label for="message">Message
             <textarea name="message" v-model="formData.message"></textarea>
+            </label>
           </div>
 
           <button type="submit">Submit form</button>
         </form>
       </div>
-    </section>
+    </section> 
 
+    <OurTeam ></OurTeam> 
+    <Ideas ></Ideas>
+    
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
 </template>
 
-<page-query>
-query Homepage {
-  homepage(id: "1") {
-    bio
-  }
-}
-</page-query>
+
+
 <script>
 import Landing from "../components/Landing";
 import OurResults from "../components/OurResults";
 import OurServices from "../components/OurServices";
 import OurMission from "../components/OurMission";
+import PartnersBanner from "../components/PartnersBanner";
+import ConsultationsBanner from "../components/ConsultationsBanner";
 import OurTeam from "../components/OurTeam";
+import Introduction from '../components/Introduction.vue';
+import Ideas from '../components/Ideas.vue';
+import VueScrollReveal from 'gridsome-scroll-reveal';
+
 export default {
   data() {
     return {
-      translateVal: 0,
-      successMessage: null,
-      messageColor: "#40db80",
       formData: {},
-      ourResultsMobile: false
+      messageColor: '',
+      successMessage: '',
+      faqActive: null,
+      faqs: [
+        {
+          question: "How much do you charge?",
+          answer: "We charge between $50 and $100 per hour depending on what your project is. Our consultations are free, so contact us today for a quick quote! We also offer lots of promotions and incentives for refferals, new, and returning customers."
+        },
+        {
+          question: "Do you design AND code websites?",
+          answer: "Yes! We are a web design and web development company. We also do digital marketing."
+        },
+        {
+          question: "Do you design logos?",
+          answer: "Yes! We specialize in logos and branding in general. "
+        },
+        {
+          question: "Do you do facebook/social media ads?",
+          answer: "Yes! We offer social media and google advertising. "
+        },
+      ],
+      
     };
   },
   metaInfo: {
     title: "Site | Chicago Web Development"
   },
   methods: {
-    handleScroll(event) {
-      this.translateVal = window.scrollY;
-    },
+
     encode(data) {
       return Object.keys(data)
         .map(
@@ -118,7 +150,7 @@ export default {
         })
           .then(() => {
             this.messageColor = "green";
-            this.successMessage = "Thank you for contacting Site!";
+            this.successMessage = "Thank you for contacting Site, a team member will reach out to you by email in 1-4 hours. ";
           })
           .catch(error => {
             this.messageColor = "#db4040";
@@ -133,202 +165,96 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
   },
   components: {
     Landing,
+    PartnersBanner,
     OurResults,
+    Introduction,
     OurServices,
     OurMission,
-    OurTeam
+    ConsultationsBanner,
+    OurTeam,
+    Ideas
   }
-};
+}
 </script>
 
-<style>
-/* rubik-regular - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../static/fonts/rubik-v9-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("Rubik"), local("Rubik-Regular"),
-    url("../../static/fonts/rubik-v9-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-regular.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-/* rubik-500 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../../static/fonts/rubik-v9-latin-500.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Medium"), local("Rubik-Medium"),
-    url("../../static/fonts/rubik-v9-latin-500.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-500.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-500.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-500.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-500.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-/* rubik-700 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../../static/fonts/rubik-v9-latin-700.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Bold"), local("Rubik-Bold"),
-    url("../../static/fonts/rubik-v9-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-700.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-700.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-700.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-700.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-/* rubik-900 - latin */
-@font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../../static/fonts/rubik-v9-latin-900.eot"); /* IE9 Compat Modes */
-  src: local("Rubik Black"), local("Rubik-Black"),
-    url("../../static/fonts/rubik-v9-latin-900.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("../../static/fonts/rubik-v9-latin-900.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("../../static/fonts/rubik-v9-latin-900.woff") format("woff"),
-    /* Modern Browsers */ url("../../static/fonts/rubik-v9-latin-900.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("../../static/fonts/rubik-v9-latin-900.svg#Rubik") format("svg"); /* Legacy iOS */
-}
-.maxWidthContainer {
-  max-width: 1400px;
-  margin: auto;
-}
-#landingCircle {
-  left: 120px;
-  position: absolute;
-  z-index: -20;
-  height: 50px;
-  width: auto;
-}
+<style lang="scss">
 
-#resultsCircle {
-  bottom: -400px;
-  left: 100px;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  z-index: -20;
-}
-@media screen and (max-width: 640px) {
-  #landingCircle {
-    left: 300px;
-    position: absolute;
-    z-index: -20;
-  }
-  #resultsCircle {
-    left: 150px;
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    z-index: -20;
-  }
-  #servicesCircle {
-    top: 2000px;
-    right: 40px;
-    height: 30px;
-    width: auto;
-    position: absolute;
-    z-index: -20;
-  }
-}
-#servicesCircle {
-  right: 100px;
-  height: 30px;
-  width: auto;
-  position: absolute;
-  z-index: -20;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+$yellow: #FFC700;
+$blue: #5751FE;
+$purple: #A25AFF;
+$red: #F24F1F; 
+$green: #0FAA58; 
 
-button {
-  padding: 17px 24px;
-  font-family: "Rubik";
-  font-weight: 700;
-  color: white;
-  background: rgb(14, 167, 255);
-  font-size: 18px;
-  border: none;
-  border-radius: 20px;
-}
-button.m1 {
-  margin-right: 1rem;
-}
-.cardHidden {
-  visibility: hidden;
-}
-
-#contactUs {
+.faq {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 0 0 #000;
   margin-top: 2rem;
-  background: rgb(14, 22, 29);
-  padding: 2rem;
+  max-width: 55%;
+  cursor: pointer;
+  transition: all .2s; 
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+  }
 }
-#contactUs .maxWidthContainer {
+.faq:hover {
+  transform: translateY(-3px);
+  box-shadow: 15px 15px 0 0px #000;
+}
+.faq .faq--answer {
+  display: none;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0;
+  border-top: 2px solid #000;
+}
+.faq .faq--question {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+
 }
-#contactUs .maxWidthContainer .sender-info div {
-  margin-bottom: 1rem;
+.maxWidthWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  @media screen and (max-width: 1600px) {
+    padding: 1.5rem;
+  }
+  box-sizing: border-box; 
 }
-#contactUs form {
+#contactUs {
+  background: #C5B9FF;
+  margin: 45px;
+  padding: 100px 0;
+  box-sizing: border-box; 
+  @media screen and (max-width: 700px) {
+    margin: 50px 0;
+    padding: 30px 0;
+  }
+}
+label {
+  font-weight: 800;
+  margin-bottom: .5rem;
   margin-top: 2rem;
-}
-#contactUs .maxWidthContainer textarea {
-}
-#contactUs .maxWidthContainer label {
   display: block;
 }
-#contactUs .maxWidthContainer input,
-#contactUs .maxWidthContainer textarea {
-  background: none;
-  border: none;
-  border: 1px solid white;
-  color: white;
+input,textarea {
+  border: 4px solid #000;
   padding: 1rem;
-  margin: 1rem 0;
-  resize: none;
-  transition: all 0.3s;
-  outline: none;
-  width: 50%;
+  box-shadow: 10px 10px 0 0 #000;
+  width: 100%;
+  box-sizing: border-box;
+  
 }
-@media screen and (max-width: 640px) {
-  #contactUs .maxWidthContainer input,
-  #contactUs .maxWidthContainer textarea {
-    width: 100%;
-  }
+button {
+  margin-top: 4rem;
 }
-#contactUs .maxWidthContainer input:focus,
-#contactUs .maxWidthContainer textarea:focus {
-  border-bottom: 1px solid rgb(255, 0, 234);
-  outline: none;
-  transition: outline 0.3s;
+form button {
+  margin-top: 2rem !important; 
 }
 </style>

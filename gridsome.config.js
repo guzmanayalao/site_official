@@ -24,7 +24,7 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         path: "posts/**/*.md",
-        typeName: "Post",
+        typeName: "Posts",
         remark: {
           plugins: [
             // ...local plugins
@@ -37,6 +37,18 @@ module.exports = {
       options: {
         path: "homepage/**/*.md",
         typeName: "Homepage",
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "caseStudies/**/*.md",
+        typeName: "caseStudies",
         remark: {
           plugins: [
             // ...local plugins

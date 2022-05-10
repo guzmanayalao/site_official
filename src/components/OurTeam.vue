@@ -1,34 +1,30 @@
 <template>
     <section id="ourTeam">
-      <div class="maxWidthContainer">
+      <div class="maxWidthWrapper">
+        <g-image id="teamImage" src="../../static/uploads/figma/team.png"></g-image>
         <div id="ourTeamContent">
-          <h2>Our Team</h2>
-          <p>Our team is located in "The Mexico of the Midwest". Little Village, Chicago and the Latino community at large produces a great amount of business for our communities. Our mission is to make sure local businesses like those in Little Village are able to compete in the forever evolving world of the web. </p>
-          
+          <h2 class="large underline underline--red">Team</h2>
+          <p class="large">We are a latino founded agency born and raised here in Chicago. Chicago and the Latino community at large produce a great amount of business for our cities. Our mission is to make sure local businesses like those in Chicago are able to compete in the forever evolving world of the web. Our team has offices located in Little Village and Streeterville in Chicago.  </p>
+          <button>Learn More</button>
         </div>
       </div>
       
     </section>
 </template>
 <style scoped>
-#ourTeam .maxWidthContainer:first-of-type {
-  padding: 0px 75px 0 75px;
+#ourTeam {
+  margin-top: 8rem;
+}
+#teamImage {
+  width: 100%;
+}
+.maxWidthContainer {
+  width: 1280px;
+  margin: 0 auto;
 }
 
-#ourTeamContent  {
-    font-family: "Rubik";
-    margin: 10rem auto;
-    text-align: center;
 
-}
-#ourTeamContent h2 {
-        font-size: 40px; 
 
-}
-#ourTeamContent p {
-    font-size: 18px;
-    line-height: 36px;
-}
 @media screen and (max-width: 1024px) {
   #ourTeam .maxWidthContainer:first-of-type {
     display: flex;
