@@ -25,7 +25,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Service Type Heading", name: "service_headline", widget: "string" }
-      - { label: "Service Type Content", name: "service1_content", widget: "markdown" }
+      - { label: "Service Type Content", name: "service_content", widget: "markdown" }
       # - { label: "Excerpt", name: "excerpt", widget: "string" }
       # - { label: "Body", name: "body", widget: "markdown" }
       # - { label: "Body2", name: "body2", widget: "markdown" }
