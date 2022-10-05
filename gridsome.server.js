@@ -82,7 +82,30 @@ module.exports = function(api) {
       })
     })
   })
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`  
+    {
+      allServices {
+        edges {
+          node {
+            service_headline
+            service_content
+          }
+        }
+      } 
+    }
+    `)
 
+    // data.allServices.edges.forEach(({ node }) => {
+    //   createPage({
+    //     path: `/case-studies/${node.slug}`,
+    //     component: './src/templates/project.vue',
+    //     context: {
+    //       node
+    //     }
+    //   })
+    // })
+  })
   // api.createPages(({ createPage }) => {
   //   //gridsome.server.js
   //   createPage({

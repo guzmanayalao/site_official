@@ -5,7 +5,10 @@
       <h2 class="large underline underline--green">Services</h2>
       <div id="ourServicesDescriptions">
         <g-image id="shapesBlue" src="../../static/uploads/figma/shapesBlue.svg"></g-image>
-        <div class="descriptionItem" id="description_webDevelopment">
+        <!-- {{ $static.services.service_heading }} 
+        {{ $static.services.service_content }} 
+         -->
+        <!-- <div class="descriptionItem" id="description_webDevelopment">
           <h3> {{ $static.homepage.service1_headline }} </h3>
           <p>
             {{ $static.homepage.service1_content }} 
@@ -34,27 +37,21 @@
           <p class="large" style="max-width:unset">
             {{ $static.homepage.service4_content }} 
           </p>
-          <!-- <button>See How</button> -->
-        </div>
-      </div>
+           <button>See How</button> 
+        </div> -->
+      </div> 
       <button>See A List of All Services</button>
     </div>
   </section>
 </template>
-<static-query>
+<!-- <static-query>
 query {
-  homepage(id: "1") {
-    service1_headline
-    service2_headline
-    service3_headline
-    service4_headline
-    service1_content
-    service2_content
-    service3_content
-    service4_content
+  services(id: "1") {
+    service_headline
+    service_content
   } 
 }
-</static-query>
+</static-query> -->
 <script>
 export default {
   data() {
