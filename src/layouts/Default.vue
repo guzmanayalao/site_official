@@ -89,7 +89,14 @@ html {
 .fade-enter-active {
   transition: opacity .5s;
 }
-
+button, button a {
+  color: #000;
+}
+button a {
+  &:visited, &:link {
+    color: #000;
+  }
+}
 .fade-enter {
   opacity: 0;
 }
