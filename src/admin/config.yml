@@ -26,7 +26,7 @@ collections:
     fields:
       - { label: "Service Type Heading", name: "service_headline", widget: "string" }
       - { label: "Service Type Content", name: "service_content", widget: "markdown" }
-      - { label: "Service Type Content", name: "service_order", widget: "number" }
+      - { label: "Service Type List Order", name: "service_order", widget: "number" }
 
       # - { label: "Excerpt", name: "excerpt", widget: "string" }
       # - { label: "Body", name: "body", widget: "markdown" }
