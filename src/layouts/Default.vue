@@ -13,16 +13,34 @@
           <span>Site | Web Design &amp; Marketing Agency</span>
         </g-link>
         <div class="desktopNav">
-          <a href="/#ourResults">Results</a>
-          <a href="/#ourServicesAnchor" 
+          <a href="/#ourServices" 
             >Services</a
           >
+          <a href="/#ourResults">Results</a>
+          
           <a href="/#ourMission" 
             >Testimonials</a
           >
+          <a href="/#contactUs" 
+            >Contact</a
+          >
         </div>
-        <div>
-          <font-awesome icon="bars"></font-awesome>
+        <div class="mobileNav">
+          <font-awesome icon="bars" @click="mobileMenuOpen = true" v-if="!mobileMenuOpen"></font-awesome>
+          <font-awesome icon="times" @click="mobileMenuOpen = false" v-else></font-awesome>
+          <div class="mobileNav--content" :style="mobileMenuOpen ? 'display: flex' : 'display: none'">
+            <a href="#ourServices" 
+               @click="mobileMenuOpen = false">Services</a
+            >
+            <a href="#ourResults" @click="mobileMenuOpen = false">Results</a>
+            
+            <a href="#ourMission" 
+               @click="mobileMenuOpen = false">Testimonials</a
+            >
+            <a href="/#contactUs" 
+              >Contact</a
+            >
+          </div>
         </div>
       </div>
     </nav> 
@@ -43,7 +61,7 @@
 export default {
   data() {
     return {
-     
+      mobileMenuOpen: false,
     };
   },
   methods: {
@@ -64,6 +82,10 @@ $blue: #5751FE;
 $purple: #A25AFF;
 $red: #F24F1F; 
 $green: #0FAA58; 
+
+html {
+  scroll-behavior: smooth;
+}
 .fade-enter-active {
   transition: opacity .5s;
 }
@@ -75,6 +97,29 @@ $green: #0FAA58;
   @media screen and (max-width: 700px) {
     display: none;
   }
+}
+.mobileNav {
+  &--content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index: -1;
+    margin-top: 72px;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 1rem;
+      border-bottom: 1px solid #000;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
+
 }
 body {
   overflow-x: hidden;

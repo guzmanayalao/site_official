@@ -147,7 +147,7 @@
 @media screen and (max-width: 800px) {
   .testimonialCards {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-row-gap: 100px;
     padding: 0px 0px;
   }

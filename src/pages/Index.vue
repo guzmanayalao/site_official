@@ -78,7 +78,7 @@
     </section> 
 
     <OurTeam ></OurTeam> 
-    <Ideas ></Ideas>
+    <!-- <Ideas ></Ideas> -->
     
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>

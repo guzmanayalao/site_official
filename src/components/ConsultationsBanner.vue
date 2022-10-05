@@ -2,7 +2,7 @@
   <section id="consultationsBanner">
     <div class="maxWidthWrapper">
       <p>Our consultations are 100% free. Hablamos espanol. 👉</p>
-      <button>Schedule Consultation</button>
+      <button><a href="#contactUs">Schedule Consultation</a></button>
     </div>
     
   </section>

@@ -5,7 +5,7 @@
       <h2 class="large underline underline--green">Services</h2>
       <div id="ourServicesDescriptions">
         <g-image id="shapesBlue" src="../../static/uploads/figma/shapesBlue.svg"></g-image>
-        <div class="descriptionItem" id="description_webDevelopment" v-for="(edge, i) in $static.allServices.edges.slice()" :key="i">
+        <div class="descriptionItem" id="description_webDevelopment" v-for="(edge, i) in $static.allServices.edges" :key="i">
           <h3> {{ edge.node.service_headline }} </h3>
           <p>
             {{ edge.node.service_content }} 
@@ -45,13 +45,13 @@
            <button>See How</button> 
         </div> -->
       </div> 
-      <button>See A List of All Services</button>
+      <!-- <button>See A List of All Services</button> -->
     </div>
   </section>
 </template>
 <static-query>
 query {
-  allServices: allServices {
+  allServices: allServices(sortBy: "service_order", order: ASC) {
     edges {
       node {
         service_headline
@@ -71,6 +71,7 @@ export default {
   },
   methods: {},
   mounted() {
+    // console.log(this.$static)
     // window.addEventListener('scroll', this.handleScroll);
   }
 };
@@ -103,9 +104,11 @@ export default {
   border: 4px solid #000;
   padding: 1.25rem 1.5rem;
   margin-right: 4rem;
+  gap: 30px;
   flex-grow: 1;
-  flex-basis: calc( 100px / 3 ); 
+  flex-basis: calc( (100% - 12rem) / 3 ); 
   margin-bottom: 3rem;
+  box-sizing: border-box;
   button {
     margin-bottom: 2rem !important;
   }
@@ -118,14 +121,14 @@ export default {
       margin-right: 1rem;
   }
 }
-.descriptionItem:last-of-type {
-  flex-grow: 3;
-  flex-basis: 100%; 
+// .descriptionItem:last-of-type {
+//   flex-grow: 3;
+//   flex-basis: 100%; 
    
-  @media screen and (max-width: 700px) {
-    margin-top: 0;
-  }
-}
+//   @media screen and (max-width: 700px) {
+//     margin-top: 0;
+//   }
+// }
 #ourServices .maxWidthWrapper > button {
   margin: 4rem auto 0 auto !important;
   display: block;

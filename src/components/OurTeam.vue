@@ -4,16 +4,24 @@
         <g-image id="teamImage" src="../../static/uploads/figma/team.png"></g-image>
         <div id="ourTeamContent">
           <h2 class="large underline underline--red">Team</h2>
-          <p class="large">We are a latino founded agency born and raised here in Chicago. Chicago and the Latino community at large produce a great amount of business for our cities. Our mission is to make sure local businesses like those in Chicago are able to compete in the forever evolving world of the web. Our team has offices located in Little Village and Streeterville in Chicago.  </p>
-          <button>Learn More</button>
+          <p class="large" v-html="$static.homepage.team "> </p>
+          <!-- <button>Learn More</button> -->
         </div>
       </div>
       
     </section>
 </template>
+<static-query>
+  query {
+    homepage(id: "1") {
+      team
+    } 
+  }
+</static-query>
 <style scoped>
 #ourTeam {
   margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 #teamImage {
   width: 100%;
@@ -95,7 +103,7 @@ export default {
     data() {
         return {
         
-
+ 
         }
     },
 

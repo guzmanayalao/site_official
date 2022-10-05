@@ -5,7 +5,7 @@
         <h1 v-if="alt">Case Study: {{ altData }} </h1>
         <h1 v-else>{{ $static.homepage.headline }}</h1>
 
-        <button>contact us</button>
+        <button><a href="#contactUs">Contact Us</a></button>
       </div>
       <g-image v-if="!alt" id="landingShapes" src="../../static/uploads/figma/landingShapes.svg"></g-image>
     </div>
@@ -54,6 +54,13 @@ button {
   margin-top: 0 !important;
   &--yellow {
     background: $yellow;
+  }
+  a {
+    &:link, &:hover, &:visited {
+      text-decoration: none;
+      color: #000;
+    }
+
   }
 }
 button:hover {
