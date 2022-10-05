@@ -2,11 +2,11 @@
 title: AAII Growth Investing
 meta_title: AAII Growth Investing
 slug: aaii-growth-investing
-categories: \#
-scope: \#
+categories: C﻿oming soon!
+scope: C﻿oming soon!
 image: /uploads/ticker-passes-2x.png
 vimeo: "#"
-tldr: T﻿esting
-goal: asdf
-how: a﻿sdf
+tldr: C﻿oming soon!
+goal: C﻿oming soon!
+how: C﻿oming soon!
 ---
