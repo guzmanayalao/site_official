@@ -1,5 +1,5 @@
 ---
-service_headline: SEO
+service_headline: Search Engine Optimization (SEO)
 service_content: Search engine optimization helps make sure your customers are
   finding you on google and other search engines. We'll make sure your website
   is following all the right rules to boost your search engine ranking. Get
