@@ -5,14 +5,19 @@
       <h2 class="large underline underline--green">Services</h2>
       <div id="ourServicesDescriptions">
         <g-image id="shapesBlue" src="../../static/uploads/figma/shapesBlue.svg"></g-image>
-        <!-- {{ $static.services.service_heading }} 
-        {{ $static.services.service_content }} 
-         -->
+        <div class="descriptionItem" id="description_webDevelopment" v-for="(edge, i) in $static.allServices.edges.slice()" :key="i">
+          <h3> {{ edge.node.service_headline }} </h3>
+          <p>
+            {{ edge.node.service_content }} 
+          </p>
+        </div>
+            
         <!-- <div class="descriptionItem" id="description_webDevelopment">
           <h3> {{ $static.homepage.service1_headline }} </h3>
           <p>
             {{ $static.homepage.service1_content }} 
           </p>
+
         </div>
         <div class="descriptionItem" id="description_webDesign">
           <h3>
@@ -44,14 +49,19 @@
     </div>
   </section>
 </template>
-<!-- <static-query>
+<static-query>
 query {
-  services(id: "1") {
-    service_headline
-    service_content
-  } 
+  allServices: allServices {
+    edges {
+      node {
+        service_headline
+        service_content
+      }
+    }
+  }
 }
-</static-query> -->
+
+</static-query>
 <script>
 export default {
   data() {
@@ -91,12 +101,16 @@ export default {
   position: relative;
   background: #fff;
   border: 4px solid #000;
-  padding: 1rem 2rem;
+  padding: 1.25rem 1.5rem;
   margin-right: 4rem;
   flex-grow: 1;
   flex-basis: calc( 100px / 3 ); 
+  margin-bottom: 3rem;
   button {
     margin-bottom: 2rem !important;
+  }
+  h3 {
+    margin-top: 0;
   }
   @media screen and (max-width: 700px) {
       flex-basis: 100%;
@@ -107,7 +121,7 @@ export default {
 .descriptionItem:last-of-type {
   flex-grow: 3;
   flex-basis: 100%; 
-  margin-top: 4rem; 
+   
   @media screen and (max-width: 700px) {
     margin-top: 0;
   }
