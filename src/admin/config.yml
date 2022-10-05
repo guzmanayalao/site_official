@@ -18,6 +18,17 @@ collections:
       - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Body2", name: "body2", widget: "markdown" }
+  - name: "services"
+    label: "Services"
+    folder: "services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Service Type Heading", name: "service_headline", widget: "string" }
+      - { label: "Service Type Content", name: "service1_content", widget: "markdown" }
+      # - { label: "Excerpt", name: "excerpt", widget: "string" }
+      # - { label: "Body", name: "body", widget: "markdown" }
+      # - { label: "Body2", name: "body2", widget: "markdown" }
   - name: "homepage"
     label: "Homepage"
     folder: "homepage"
