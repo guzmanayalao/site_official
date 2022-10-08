@@ -45,7 +45,7 @@
 
           <div class="message-wrapper">
             <label for="message">Message
-            <textarea name="message" v-model="formData.message"></textarea>
+            <textarea name="message" v-model="formData.message" style="resize:none"></textarea>
             </label>
           </div>
 
