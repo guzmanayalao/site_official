@@ -5,7 +5,6 @@
     <div class="maxWidthWrapper">
       <h2 class="large underline underline--red">Case Studies</h2>
     </div>
-   <div class="maxWidthContainer">
       <div class="sliderContainer">
         
 
@@ -14,26 +13,21 @@
             <div class="projectImageWrapper">
               <g-image :src="edge.node.image"></g-image>
             </div>
-            <div class="content">
+             <div class="content">
               <h3>{{  edge.node.title }}</h3>
                 <p class="tags">{{  edge.node.categories }}</p>
                 <p>
                 {{  edge.node.goal }}
                 </p>
                 <g-link class="readMoreLink" :to=" `/case-studies/${edge.node.slug}`"
-                  style="margin-top: auto;"><button>Read More</button></g-link
+                  ><button>Read More</button></g-link
                 >
             </div>
             
           </article>
           
-
-          <article class="cardHidden"></article>
-          <article class="cardHidden"></article>
-          <article class="cardHidden"></article>
         </div>
       </div>
-    </div>
   </section>
 </template>
 <static-query>
@@ -69,9 +63,9 @@ button {
   margin: 0 !important;
 }
 </style>
-<style>
+<style lang="scss">
 #ourResults {
-  overflow: auto;
+  /* overflow: auto; */
 }
 #ourResults p.tags {
   margin-bottom: 0;
@@ -116,7 +110,6 @@ button {
   }
   #ourResults .maxWidthContainer .sliderContainer {
     display: flex;
-    width: 100vw;
     padding:  0;
     max-width: unset;
   }
@@ -137,109 +130,55 @@ button {
 
 #ourResults .maxWidthContainer .sliderContainer {
   display: flex;
-  width: 100vw;
   margin: 0 0 2rem;
   padding: 1rem 0;
-  max-width: unset;
-  position: relative;
-  left: 0;
 }
 
 #ourResultsSlider {
   display: flex;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 1024px) {
-  #ourResultsSlider {
-    overflow-x: initial;
-  }
-}
-#ourResultsSlider::-webkit-scrollbar,
-#ourResults::-webkit-scrollbar {
-  height: 1em;
-  color: #fff;
-}
-#ourResultsSlider::-webkit-scrollbar-button,
-#ourResults::-webkit-scrollbar-button {
-  width: 20px;
-}
-#ourResultsSlider::-webkit-scrollbar-track,
-#ourResults::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 20px;
-  margin-right: 400px;
-}
-@media screen and (min-width: 2000px) {
-  #ourResultsSlider::-webkit-scrollbar-track,
-  #ourResults::-webkit-scrollbar-track {
-    background: #ddd;
-    border-radius: 20px;
-    margin-left: 700px;
-    margin-right: 100px;
-  
-  }
-}
-@media screen and (max-width: 2000px) {
-  #ourResultsSlider::-webkit-scrollbar-track,
-  #ourResults::-webkit-scrollbar-track {
-    background: #ddd;
-    border-radius: 20px;
-    margin-left: 300px;
-    margin-right: 100px;
-  }
-}
-@media screen and (max-width: 1500px) {
-  #ourResultsSlider::-webkit-scrollbar-track,
-  #ourResults::-webkit-scrollbar-track {
-    background: #ddd;
-    border-radius: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-  }
-}
-#ourResultsSlider::-webkit-scrollbar-thumb,
-#ourResults::-webkit-scrollbar-thumb {
-  background-color: rgb(90, 90, 90);
-  outline: 1px solid slategrey;
-  border-radius: 20px;
-}
-@media screen and (max-width: 1024px) {
-  #ourResultsSlider::-webkit-scrollbar-track,
-  #ourResults::-webkit-scrollbar-track {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  #ourResultsSlider::-webkit-scrollbar-button,
-  #ourResults::-webkit-scrollbar-button {
-    margin-left: 100px;
-    margin-right: 100px;
-  }
-  .sliderContainer #ourResultsSlider article {
-    min-width: 230px;
-  }
-}
-#ourResultsSlider article {
-  margin-right: 3rem;
-  width: 360px;
 
+#ourResultsSlider article {
+  flex-basis: 50%;
+  position: relative;
+  cursor: pointer; 
+  flex-grow: 1;
+  @media screen and (max-width: 768px) {
+    flex-basis: 100%;
+  }
+  &:hover {
+    .content{
+      opacity: 1;
+      transition: opacity .2s;
+
+    }
+  }
 }
 
 #ourResultsSlider article img {
-  height: 400px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
   object-position: top center;
 }
 #ourResultsSlider article .content{
-  max-width: 330px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 1.5rem;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
   margin: 0;
-  justify-content: flex-start;
-  min-height: 30%;
-  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+
 }
 
 
@@ -250,11 +189,11 @@ button {
   margin-bottom: .25rem;
   font-family: "Inter", sans-serif;
   line-height: 28px;
+  text-align: center;
 }
 #ourResultsSlider article p {
   font-size: 16px;
   line-height: 28px;
-  color: #000;
   margin-top: 10px;
 }
 

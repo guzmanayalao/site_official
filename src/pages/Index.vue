@@ -5,8 +5,9 @@
     <Introduction ></Introduction>
     <ConsultationsBanner ></ConsultationsBanner>
     <OurServices ></OurServices>
+    <OurResults ></OurResults>
+    <OurMission ></OurMission>
 
-    <PartnersBanner ></PartnersBanner>
     <section id="contactUs" >
       <div class="maxWidthWrapper">
         <h2 class="large" id="contact">Let's Get In Touch</h2>
@@ -53,8 +54,6 @@
         </form>
       </div>
     </section> 
-    <OurResults ></OurResults>
-    <OurMission ></OurMission>
     <ConsultationsBanner ></ConsultationsBanner>
 
     <section>
@@ -82,9 +81,11 @@
     </section>
 
 
+    <PartnersBanner ></PartnersBanner>
    
 
     <OurTeam ></OurTeam> 
+
     <!-- <Ideas ></Ideas> -->
     <ConsultationsBanner ></ConsultationsBanner>
     

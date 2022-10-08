@@ -60,6 +60,13 @@
         </main>
       </transition>
     <!-- the content -->
+
+    <footer>
+      <div class="maxWidthWrapper">
+        <h4 style="text-align: center">Site | Web Design and Marketing Agency &copy; 2022</h4>
+        
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -118,7 +125,7 @@ button a {
   opacity: 0;
 }
 .desktopNav {
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 860px) {
     display: none;
   }
 }
@@ -140,7 +147,7 @@ button a {
       border-bottom: 1px solid #000;
     }
   }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 861px) {
     display: none;
   }
 
