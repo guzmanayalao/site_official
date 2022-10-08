@@ -3,6 +3,8 @@
     
     <Landing ></Landing>
     <Introduction ></Introduction>
+    <ConsultationsBanner ></ConsultationsBanner>
+
     <PartnersBanner ></PartnersBanner>
     <OurServices ></OurServices>
     <OurResults ></OurResults>
@@ -29,6 +31,7 @@
             </p>
           </div>
         </div>
+        <p style="margin-top: 1rem;">Have a different question? <a href="#contactUs">Contact us</a></p>
       </div>
     </section>
 
@@ -39,10 +42,11 @@
         <p>
           Let's figure out how we can help you create and/or manage your online
           presence. (Our consultations are totally free.)
-          <br /><span :style="{ color: messageColor }">{{
-            successMessage
-          }}</span>
+          <br />
         </p>
+        <div class="successBanner" :style="{ color: messageColor }" v-if="successMessage" @click="successMessage = null">{{
+            successMessage
+          }} <font-awesome icon="times" style="color: #000"></font-awesome></div>
         <form
           name="contact"
           method="post"
@@ -63,6 +67,8 @@
             <div>
               <label for="email">Your email</label>
               <input type="email" name="email" v-model="formData.email" />
+              <label for="phoneNumber">Your Phone Number</label>
+              <input type="phoneNumber" name="phoneNumber" v-model="formData.phoneNumber" />
             </div>
           </div>
 
@@ -108,7 +114,7 @@ export default {
       faqs: [
         {
           question: "How much do you charge?",
-          answer: "We charge between $50 and $100 per hour depending on what your project is. Our consultations are free, so contact us today for a quick quote! We also offer lots of promotions and incentives for refferals, new, and returning customers."
+          answer: "Use the contact form to get a same day quote!"
         },
         {
           question: "Do you design AND code websites?",
@@ -139,7 +145,7 @@ export default {
         .join("&");
     },
     handleSubmit(e) {
-      if (this.formData.name && this.formData.email && this.formData.message) {
+      if (this.formData.name && this.formData.email && this.formData.message && this.formData.phoneNumber) {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -150,7 +156,7 @@ export default {
         })
           .then(() => {
             this.messageColor = "green";
-            this.successMessage = "Thank you for contacting Site, a team member will reach out to you by email in 1-4 hours. ";
+            this.successMessage = "Thank you for contacting Site, a team member will reach out to you today.";
           })
           .catch(error => {
             this.messageColor = "#db4040";
@@ -165,6 +171,7 @@ export default {
     }
   },
   mounted() {
+    this.successMessage = null;
   },
   components: {
     Landing,
@@ -188,7 +195,24 @@ $blue: #5751FE;
 $purple: #A25AFF;
 $red: #F24F1F; 
 $green: #0FAA58; 
-
+.successBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff; 
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 10px 10px 0 0 #000;
+  max-width: 80%;
+  padding: 1rem; 
+  font-size: 22px; 
+  margin: 0 auto 2rem auto;
+  z-index: 100;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .faq {
   background: #fff;
   border: 3px solid #000;

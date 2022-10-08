@@ -1,18 +1,25 @@
 <template>
-  <section id="partnersBanner">
+  <div>
     <div class="maxWidthWrapper-large">
-      <g-image style="filter: invert(1)" src="../../static/uploads/figma/aaii.png" alt=""></g-image>
-      <!-- <g-image src="../../static/uploads/figma/acl.svg" alt=""></g-image> -->
-      <g-image src="../../static/uploads/figma/gll.svg" alt=""></g-image>
-      <!-- <g-image style="filter: invert(1)"  src="../../static/uploads/figma/belniak.png" alt=""></g-image> -->
-      <g-image src="../../static/uploads/figma/SSR.png" alt=""></g-image>
-      <g-image src="../../static/uploads/LOGO@2x.png" alt=""></g-image>
-
-      <g-image src="../../static/uploads/figma/DI.png" alt=""></g-image>
-
+      <h2 class="large underline underline--blue">Trusted By:</h2>
     </div>
-    
-  </section>
+    <section id="partnersBanner">
+      
+      <div class="maxWidthWrapper-large">
+        <g-image style="filter: invert(1)" src="../../static/uploads/figma/aaii.png" alt=""></g-image>
+        <!-- <g-image src="../../static/uploads/figma/acl.svg" alt=""></g-image> -->
+        <g-image src="../../static/uploads/figma/gll.svg" alt=""></g-image>
+        <!-- <g-image style="filter: invert(1)"  src="../../static/uploads/figma/belniak.png" alt=""></g-image> -->
+        <g-image src="../../static/uploads/figma/SSR.png" alt=""></g-image>
+        <g-image src="../../static/uploads/LOGO@2x.png" alt=""></g-image>
+
+        <g-image src="../../static/uploads/figma/DI.png" alt=""></g-image>
+
+      </div>
+      
+    </section>
+  </div>
+
 </template>
 <script>
 export default {
@@ -33,18 +40,19 @@ export default {
   background: #fff;
   padding: 2rem;
 }
-#partnersBanner .maxWidthWrapper-large {
+
+ .maxWidthWrapper-large {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   overflow-x: auto;
 
 }
 #partnersBanner img{
   height: auto; 
-  max-width: 100px;
+  max-width: 150px;
   filter: grayscale(1);
   opacity: .7;
   object-fit: contain;
