@@ -154,7 +154,7 @@ body {
 }
 body::before {
   content: '';
-  background: #f9f9f9;
+  background: #fbf8ff;
   position: absolute;
   top: 45px;
   right: 45px;
