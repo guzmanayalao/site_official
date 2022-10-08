@@ -24,6 +24,9 @@
           <a href="/#contactUs" 
             >Contact</a
           >
+          <a href="tel:3125608859" class="callUs"
+            >312-560-8859</a
+          >
         </div>
         <div class="mobileNav">
           <font-awesome icon="bars" @click="mobileMenuOpen = true" v-if="!mobileMenuOpen"></font-awesome>
@@ -39,6 +42,9 @@
             >
             <a href="/#contactUs" 
               >Contact</a
+            >
+            <a href="tel:3125608859" class="callUs" style="text-align: center; margin: 2rem auto; width: 50%;"
+              >Call us today: 312-560-8859</a
             >
           </div>
         </div>
@@ -96,7 +102,18 @@ button a {
   &:visited, &:link {
     color: #000;
   }
+  
 }
+.callUs {
+    // border: 3px solid #000;
+    display: inline-block;
+    padding: .3rem;
+    font-size: 12px; 
+    background: #C5B9FF;
+    box-shadow: 5px 5px 0 0 rgb(0, 0, 0);
+    color: #000;
+    border: 2px solid #000;
+  }
 .fade-enter {
   opacity: 0;
 }

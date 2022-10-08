@@ -4,38 +4,9 @@
     <Landing ></Landing>
     <Introduction ></Introduction>
     <ConsultationsBanner ></ConsultationsBanner>
+    <OurServices ></OurServices>
 
     <PartnersBanner ></PartnersBanner>
-    <OurServices ></OurServices>
-    <OurResults ></OurResults>
-    <OurMission ></OurMission>
-    <ConsultationsBanner ></ConsultationsBanner>
-
-    <section>
-      <div class="maxWidthWrapper">
-        <h2 class="large underline underline--blue" id="contact">FAQ</h2>
-        <div class="faqs">
-          <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
-          <div class="faq" v-for="(faq, i) in faqs" :key="i">
-            <p class="faq--question" 
-              @click="faqActive = i"  
-              :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
-              {{ faq.question }} 
-              <font-awesome icon="caret-up" v-if="faqActive === i "></font-awesome>
-              <font-awesome icon="caret-down" v-else></font-awesome>
-
-            
-            </p>
-            <p class="faq--answer" :style="[ faqActive === i ? { 'display': 'block' } : {'display': 'none'} ]">
-              {{ faq.answer }}
-            </p>
-          </div>
-        </div>
-        <p style="margin-top: 1rem;">Have a different question? <a href="#contactUs">Contact us</a></p>
-      </div>
-    </section>
-
-
     <section id="contactUs" >
       <div class="maxWidthWrapper">
         <h2 class="large" id="contact">Let's Get In Touch</h2>
@@ -82,9 +53,40 @@
         </form>
       </div>
     </section> 
+    <OurResults ></OurResults>
+    <OurMission ></OurMission>
+    <ConsultationsBanner ></ConsultationsBanner>
+
+    <section>
+      <div class="maxWidthWrapper">
+        <h2 class="large underline underline--blue" id="contact">FAQ</h2>
+        <div class="faqs">
+          <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
+          <div class="faq" v-for="(faq, i) in faqs" :key="i">
+            <p class="faq--question" 
+              @click="faqActive = i"  
+              :style="[ faqActive === i ? { 'font-weight': '900' } : {'font-weight': '500'} ]">
+              {{ faq.question }} 
+              <font-awesome icon="caret-up" v-if="faqActive === i "></font-awesome>
+              <font-awesome icon="caret-down" v-else></font-awesome>
+
+            
+            </p>
+            <p class="faq--answer" :style="[ faqActive === i ? { 'display': 'block' } : {'display': 'none'} ]">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 1rem;">Have a different question? <a href="#contactUs">Contact us</a></p>
+      </div>
+    </section>
+
+
+   
 
     <OurTeam ></OurTeam> 
     <!-- <Ideas ></Ideas> -->
+    <ConsultationsBanner ></ConsultationsBanner>
     
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
   </Layout>
