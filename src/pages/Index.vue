@@ -8,52 +8,7 @@
     <OurResults ></OurResults>
     <OurMission ></OurMission>
 
-    <section id="contactUs" >
-      <div class="maxWidthWrapper">
-        <h2 class="large" id="contact">Let's Get In Touch</h2>
-        <p>
-          Let's figure out how we can help you create and/or manage your online
-          presence. (Our consultations are totally free.)
-          <br />
-        </p>
-        <div class="successBanner" :style="{ color: messageColor }" v-if="successMessage" @click="successMessage = null">{{
-            successMessage
-          }} <font-awesome icon="times" style="color: #000"></font-awesome></div>
-        <form
-          name="contact"
-          method="post"
-          v-on:submit.prevent="handleSubmit"
-          action="/success/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label> Don’t fill this out: <input name="bot-field" /> </label>
-          </p>
-          <div class="sender-info">
-            <div>
-              <label for="name" class="label">Your name</label>
-              <input type="text" name="name" v-model="formData.name" />
-            </div>
-            <div>
-              <label for="email">Your email</label>
-              <input type="email" name="email" v-model="formData.email" />
-              <label for="phoneNumber">Your Phone Number</label>
-              <input type="phoneNumber" name="phoneNumber" v-model="formData.phoneNumber" />
-            </div>
-          </div>
-
-          <div class="message-wrapper">
-            <label for="message">Message
-            <textarea name="message" v-model="formData.message" style="resize:none"></textarea>
-            </label>
-          </div>
-
-          <button type="submit">Submit form</button>
-        </form>
-      </div>
-    </section> 
+    <ContactForm></ContactForm>
     <ConsultationsBanner ></ConsultationsBanner>
 
     <section>
@@ -104,14 +59,11 @@ import ConsultationsBanner from "../components/ConsultationsBanner";
 import OurTeam from "../components/OurTeam";
 import Introduction from '../components/Introduction.vue';
 import Ideas from '../components/Ideas.vue';
-import VueScrollReveal from 'gridsome-scroll-reveal';
+import ContactForm from "../components/ContactForm.vue";
 
 export default {
   data() {
     return {
-      formData: {},
-      messageColor: '',
-      successMessage: '',
       faqActive: null,
       faqs: [
         {
@@ -184,8 +136,9 @@ export default {
     OurMission,
     ConsultationsBanner,
     OurTeam,
-    Ideas
-  }
+    Ideas,
+    ContactForm
+}
 }
 </script>
 
@@ -197,24 +150,7 @@ $blue: #5751FE;
 $purple: #A25AFF;
 $red: #F24F1F; 
 $green: #0FAA58; 
-.successBanner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff; 
-  border: 3px solid rgb(0, 0, 0);
-  box-shadow: 10px 10px 0 0 #000;
-  max-width: 80%;
-  padding: 1rem; 
-  font-size: 22px; 
-  margin: 0 auto 2rem auto;
-  z-index: 100;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .faq {
   background: #fff;
   border: 3px solid #000;
@@ -253,34 +189,6 @@ $green: #0FAA58;
   }
   box-sizing: border-box; 
 }
-#contactUs {
-  background: #C5B9FF;
-  margin: 45px;
-  padding: 100px 0;
-  box-sizing: border-box; 
-  @media screen and (max-width: 700px) {
-    margin: 50px 0;
-    padding: 30px 0;
-  }
-}
-label {
-  font-weight: 800;
-  margin-bottom: .5rem;
-  margin-top: 2rem;
-  display: block;
-}
-input,textarea {
-  border: 4px solid #000;
-  padding: 1rem;
-  box-shadow: 10px 10px 0 0 #000;
-  width: 100%;
-  box-sizing: border-box;
-  
-}
-button {
-  margin-top: 4rem;
-}
-form button {
-  margin-top: 2rem !important; 
-}
+
+
 </style>

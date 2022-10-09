@@ -146,6 +146,7 @@ button {
   flex-grow: 1;
   @media screen and (max-width: 768px) {
     flex-basis: 100%;
+    margin-bottom: 1rem;
   }
   &:hover {
     .content{
@@ -178,7 +179,9 @@ button {
   color: #fff;
   opacity: 0;
   transition: opacity 0.5s;
-
+  @media screen and (max-width: 768px) {
+    opacity: 1;
+  }
 }
 
 
@@ -195,6 +198,8 @@ button {
   font-size: 16px;
   line-height: 28px;
   margin-top: 10px;
+  text-align: center;
+  width: 80%;
 }
 
 

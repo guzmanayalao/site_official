@@ -100,7 +100,7 @@ h1 {
 }
 @media screen and (max-width: 600px) {
   section#landing {
-    margin: .25rem 3rem 0 .5rem;
+    margin: 2rem 3rem -1rem .5rem;
   } 
   section#landing::before {
     right: -29px;
