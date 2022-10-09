@@ -78,7 +78,7 @@ export default {
     };
   },
   methods: {
-      
+    
   },
   mounted() {
     // window.sntchChat.Init(86171);
@@ -191,6 +191,7 @@ nav {
   right: 0;
   background: #fff;
   z-index: 1;
+  border-bottom: 2px solid #000;
 }
 nav span {
   @media screen and (max-width: 700px) {

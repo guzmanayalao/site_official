@@ -65,7 +65,9 @@ module.exports = function(api) {
             slug,
             tldr,
             how,
-            image
+            image,
+            short_image,
+            wireframes
           }
         }
       } 

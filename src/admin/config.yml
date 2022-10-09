@@ -66,6 +66,7 @@ collections:
       - { label: "Scope", name: "scope", widget: "markdown" }
       - { label: "Tall Image", name: "image", widget: "image" }
       - { label: "Shorter Image", name: "short_image", widget: "image" }
+      - { label: "Wireframes Snippet", name: "wireframes", widget: "image" }
       - { label: "Vimeo Link", name: "vimeo", widget: "string" }
       - { label: "TLDR", name: "tldr", widget: "markdown" }
       - { label: "Goal", name: "goal", widget: "string" }

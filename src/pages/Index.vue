@@ -60,7 +60,7 @@
       <div class="maxWidthWrapper">
         <h2 class="large underline underline--blue" id="contact">FAQ</h2>
         <div class="faqs">
-          <p class="large">We are a web design company that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
+          <p class="large">We are a design and marketing agency that believes in full transparency. Check out these frequently asked questions, if you have a specific question you don't see answered here please <a href="#contactUs">contact us</a>. </p>
           <div class="faq" v-for="(faq, i) in faqs" :key="i">
             <p class="faq--question" 
               @click="faqActive = i"  
@@ -76,7 +76,6 @@
             </p>
           </div>
         </div>
-        <p style="margin-top: 1rem;">Have a different question? <a href="#contactUs">Contact us</a></p>
       </div>
     </section>
 
@@ -117,7 +116,7 @@ export default {
       faqs: [
         {
           question: "How much do you charge?",
-          answer: "Use the contact form to get a same day quote!"
+          answer: "Each project is unique, but we have some of the most competitive prices in the entire Chicagoland area. This is because we have a small but talented team that can wear many hats at once. We are also fully remote so we don't have to waste money on a fancy office 😛. By the way, we NEVER out-source our work like a lot of our competitors, everything is done in-house! Use the contact form to get a same day quote!"
         },
         {
           question: "Do you design AND code websites?",

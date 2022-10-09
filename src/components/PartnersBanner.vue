@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="maxWidthWrapper-large">
+    <!-- <div class="maxWidthWrapper-large">
       <h2 class="large underline underline--blue">Trusted By:</h2>
-    </div>
+    </div> -->
     <section id="partnersBanner">
       
       <div class="maxWidthWrapper-large">
@@ -40,13 +40,14 @@ export default {
 #partnersBanner {
   background: #fff;
   padding: 2rem;
+  margin-top: 2rem;
 }
 
  .maxWidthWrapper-large {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   flex-wrap: wrap;
   padding: 1.5rem;
@@ -68,18 +69,18 @@ export default {
     }
   }
 }
-#partnersBanner img{
+#partnersBanner img, p.textImg{
   height: auto; 
   max-width: 150px;
-  filter: grayscale(1);
-  opacity: .7;
+  opacity: 1;
   object-fit: contain;
   margin-right: 2rem;
+  filter: grayscale(0);
+  text-align: center;
   
 }
 #partnersBanner img:hover{
 
-  filter: grayscale(0);
   opacity: 1;
 }
 </style>
