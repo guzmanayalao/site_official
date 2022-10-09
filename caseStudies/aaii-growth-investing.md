@@ -6,6 +6,7 @@ categories: C﻿oming soon!
 scope: Coldfusion, Javascript, HTML5, SCSS.
 image: /uploads/ticker-passes-2x.png
 short_image: /uploads/ticker-passes-2x-copy.png
+wireframes: /uploads/wireframes.png
 vimeo: "#"
 tldr: C﻿oming soon!
 goal: "Design and develop a new product for AAII. AAII has tens of thousands of
