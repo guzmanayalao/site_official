@@ -78,6 +78,7 @@ export default {
           })
         })
           .then(() => {
+            window.gtag_report_conversion();
             this.messageColor = "green";
             this.successMessage = "Thank you for contacting Site, a team member will reach out to you today.";
           })
